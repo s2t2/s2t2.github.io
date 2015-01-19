@@ -4,4 +4,6 @@ title: About
 permalink: /about/
 ---
 
-This is an open blog.
+{% if site.description %}
+  {{ site.description }}
+{% endif %}

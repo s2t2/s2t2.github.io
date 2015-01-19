@@ -2,7 +2,7 @@
 title: MJ Rossetti
 email: s2t2mail+blog@gmail.com
 description: >
-  An open blog.
+  This is an open blog.
 baseurl: ""
 url: "http://s2t2.github.io"
 twitter_username: s2t2
@@ -10,7 +10,6 @@ github_username:  s2t2
 exclude: ["README.md"]
 
 # Build settings
-markdown: kramdown
-
-kramdown:
-  input: GFM
+markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis","tables","fenced_code_blocks","autolink","with_toc_data"] # https://github.com/vmg/redcarpet/blob/v2.2.2/README.markdown#and-its-like-really-simple-to-use
