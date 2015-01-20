@@ -3,8 +3,8 @@ layout: post
 title:  "Hello World"
 date:   2015-01-19 14:27:27
 author: MJ Rossetti
-categories: press-releases
-tags: test-post blogging
+categories: test-driven-blogging
+tags: testing blogging
 published: true
 ---
 Hello World.
@@ -13,7 +13,7 @@ This is an open blog post, the [source content](https://github.com/s2t2/s2t2.git
 
 A list of assigned categories and tags should be visible near the post's header, alongside its author and publication date.
 
-The index page for each [assigned category](/categories/press_releases) and [tag](/tags/blogging) should contain a list item linking back to this post.
+The index page for each [assigned category](/categories/test-driven-blogging) and [tag](/tags/blogging) should contain a list item linking back to this post.
 
 This post should syntax-highlight code written in markdown.
 
