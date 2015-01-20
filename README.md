@@ -1,10 +1,10 @@
 # s2t2.github.io
 
-An [open](https://github.com/s2t2/s2t2.github.io) blog compiled with [jekyll](http://jekyllrb.com/) and hosted by [github pages](https://pages.github.com/).
+An [open](https://github.com/s2t2/s2t2.github.io) blog built with [jekyll](http://jekyllrb.com/) and hosted by [github pages](https://pages.github.com/).
 
 ## Usage
 
-View live at [s2t2.github.io](s2t2.github.io).
+Visit [s2t2.github.io](s2t2.github.io) in a web browser.
 
 ## Contributing
 
@@ -12,6 +12,6 @@ Follow [github workflow](https://guides.github.com/introduction/flow/index.html)
 
 ## License
 
-Content: [Creative Commons, BY](http://creativecommons.org/licenses/by/3.0/)
+Content: [Creative Commons, BY-SA](http://creativecommons.org/licenses/by-sa/4.0/)
 
 Code: [MIT](http://opensource.org/licenses/mit-license.php)

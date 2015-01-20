@@ -1,6 +1,6 @@
 # Site settings
-title: MJ Rossetti
-email: s2t2mail+blog@gmail.com
+title: blog title
+email: # no thanks?
 description: >
   This is an open blog.
 baseurl: ""
