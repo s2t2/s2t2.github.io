@@ -4,7 +4,7 @@ title:  "Metro North Stations on a Map"
 date:   2013-09-13 01:01:01
 author: MJ Rossetti
 categories: open-data-vizualizations
-tags: metro-north-railroad map open-transit-data gtfs
+tags: metro-north-railroad gtfs open-transit-data map
 published: true
 ---
 

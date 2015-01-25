@@ -12,4 +12,13 @@ layout: default
     {{ content }}
   </article>
 
+  {% if page.tags %}
+    <p style="display:inline;"><i class="fa fa-tags" title="tags"></i>:</p>
+    <ul style="list-style-type: none; display: inline; margin-left:0;">
+      {% for tag in page.tags %}
+        <li style="display: inline;"><a href="/tags/{{ tag }}">#{{ tag }}</a></li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
 </div>
