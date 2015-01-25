@@ -1,4 +1,4 @@
-# s2t2.github.io
+# s2t2.github.io (s2t2.info)
 
 An [open](https://github.com/s2t2/s2t2.github.io) blog built with [jekyll](http://jekyllrb.com/) and hosted by [github pages](https://pages.github.com/).
 

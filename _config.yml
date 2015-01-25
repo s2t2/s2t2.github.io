@@ -3,7 +3,7 @@ title: "s2t2.info"
 author: "MJ Rossetti"
 description: "an open source blog"
 source_url: "https://github.com/s2t2/s2t2.github.io"
-url: "http://s2t2.github.io"
+url: "http://s2t2.info" # "http://s2t2.github.io"
 baseurl: ""
 twitter_username: s2t2
 github_username:  s2t2
