@@ -12,13 +12,26 @@ layout: default
     {{ content }}
   </article>
 
+  {% if page.categories %}
+    <div>
+      <p style="display:inline;"><i class="fa fa-folder-open" title="post categories"></i>:</p>
+      <ul style="list-style-type: none; display: inline-block; margin-left:0;">
+        {% for category in page.categories %}
+          <li style="display: inline;"><a href="/{{ category }}">/{{ category }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
   {% if page.tags %}
-    <p style="display:inline;"><i class="fa fa-tags" title="tags"></i>:</p>
-    <ul style="list-style-type: none; display: inline; margin-left:0;">
-      {% for tag in page.tags %}
-        <li style="display: inline;"><a href="/tags/{{ tag }}">#{{ tag }}</a></li>
-      {% endfor %}
-    </ul>
+    <div>
+      <p style="display:inline;"><i class="fa fa-tags" title="post tags"></i>:</p>
+      <ul style="list-style-type: none; display: inline-block; margin-left:0;">
+        {% for tag in page.tags %}
+          <li style="display: inline;"><a href="/tags/{{ tag }}">#{{ tag }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
   {% endif %}
 
 </div>
