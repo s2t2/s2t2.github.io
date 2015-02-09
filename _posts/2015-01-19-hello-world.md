@@ -1,11 +1,11 @@
 ---
 layout: post
 title:  "Hello World"
-date:   2015-01-19 14:27:27
 author: MJ Rossetti
 categories: test-driven-blogging
 tags: testing blogging
-published: true
+published: false
+icon_class: rebel
 ---
 Hello World.
 
