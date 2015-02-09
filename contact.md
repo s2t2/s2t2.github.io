@@ -2,6 +2,7 @@
 layout: page
 title: Contact
 permalink: /contact/
+published: false
 ---
 
 > This page should display information about how to best get in contact with me.

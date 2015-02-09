@@ -2,6 +2,7 @@
 layout: page
 title: Projects
 permalink: /projects/
+published: false
 ---
 
 ## Open Source Libraries

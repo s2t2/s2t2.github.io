@@ -2,6 +2,7 @@
 layout: page
 title: Status
 permalink: /status/
+published: false
 ---
 
 > This page should contain information about my health and well-being, including:
