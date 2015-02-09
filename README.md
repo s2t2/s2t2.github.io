@@ -8,9 +8,7 @@ Visit [s2t2.github.io](http://s2t2.github.io/) in a web browser.
 
 ## Contributing
 
-To make changes, [modify source content, then create a pull request](https://guides.github.com/introduction/flow/index.html).
-
-To publish changes, push to master branch.
+Edit a [post](/_posts), then create a [pull request](https://guides.github.com/introduction/flow/index.html).
 
 ## License
 
