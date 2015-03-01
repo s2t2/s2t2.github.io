@@ -17,8 +17,6 @@ The result of my work is a map-based tool that facilities exploration of metrics
 
 View the tool live at http://bl.ocks.org/s2t2/raw/cd45dfd8007fcf83fef7/ or check out the source code at https://gist.github.com/s2t2/cd45dfd8007fcf83fef7.
 
-Thanks, and feel free to star or post a comment on the gist if you support this work.
-
 ![A choropleth map of the United States.](/assets/images/income-and-affordability-map.png "Income and Affordability Map")
 
 {% gist cd45dfd8007fcf83fef7 %}
