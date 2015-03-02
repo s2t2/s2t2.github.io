@@ -9,7 +9,12 @@ icon_class: dollar
 technologies: mapbox.js d3.js
 ---
 
-I attended a recent hackathon which posed a number of challenges aimed at solving the problem of lack of affordable housing in San Francisco. Before working on such a project, I thought it first important to independently verify the challenge's underlying assumptions, specifically to answer the question: **just how affordable is housing in San Francisco, and how does that number compare to other geographies across the US?**.
+A hackathon I recently attended posed a number of challenges aimed at solving the problem of lack of affordable housing in San Francisco.
+
+I thought it first important to independently verify the challenges' underlying assumptions, specifically to answer the following questions:
+
+1. Just how affordable is housing in San Francisco?
+2. How does San Francisco housing affordability compare against other geographies across the United States?
 
 I learned from Wikipedia that [affordability](http://en.wiktionary.org/wiki/affordability) is a measure of cost vs one's ability to pay, and I found data from the US Census which provided exactly this information. 
 
