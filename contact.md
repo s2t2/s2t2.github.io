@@ -2,19 +2,11 @@
 layout: page
 title: Contact
 permalink: /contact/
-published: false
+published: true
 ---
 
-> This page should display information about how to best get in contact with me.
-
-## Communications Policy
-
-> This section should contain information about my communications preferences and how to contact me.
-
-## Contact Form
-
-> This section should contain a form. When the visitor submits the form, it should send me an email.
-
-## Message Board
-
-> This section should contain public comments.
+ + [gmail/s2t2mail](mailto:s2t2mail+info@gmail.com)
+ + [twitter/s2t2](https://twitter.com/s2t2)
+ + [github/s2t2](https://github.com/s2t2)
+ + [foursquare/s2t2](https://foursquare.com/s2t2)
+ + [linkedin/mikerossetti](https://linkedin.com/in/mikerossetti)
