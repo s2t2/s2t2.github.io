@@ -5,7 +5,7 @@ permalink: /credits/
 published: true
 ---
 
-Thanks for the following resources:
+Thanks for the following technology resources:
 
  + https://github.com/
  + https://gist.github.com/

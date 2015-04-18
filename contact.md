@@ -13,3 +13,5 @@ Communications are possible.
  + [foursquare/s2t2](https://foursquare.com/s2t2)
  + [linkedin/mikerossetti](https://linkedin.com/in/mikerossetti)
  + [instagram/s2t2](https://instagram.com/s2t2)
+ + [hypem/s2t2unes](http://hypem.com/s2t2unes)
+ + [rubygems/s2t2](https://rubygems.org/profiles/s2t2)
