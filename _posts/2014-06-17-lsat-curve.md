@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "LSAT Curve"
+title:  "Law School Admissions Test Score Distribution Curve"
 author: MJ Rossetti
 categories: open-data-vizualizations
 tags: law-school admissions-test score data

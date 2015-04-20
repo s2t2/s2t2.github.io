@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "US Income and Affordability Map"
+title:  "Income and Affordability by United States Geography"
 author: MJ Rossetti
 categories: open-data-vizualizations
 tags: us-census housing income affordability map
