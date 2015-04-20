@@ -5,7 +5,7 @@ permalink: /credits/
 published: true
 ---
 
-Thanks for the following technology resources:
+Thanks.
 
  + https://github.com/
  + https://gist.github.com/
@@ -13,3 +13,5 @@ Thanks for the following technology resources:
  + http://d3js.org/
  + http://stackoverflow.com/
  + http://railsforzombies.org/
+ + http://tutorials.jumpstartlab.com/
+ + http://www.meetup.com/wordpressdc/
