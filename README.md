@@ -1,3 +1,10 @@
+---
+layout: page
+title: About
+permalink: /about/
+published: true
+---
+
 # s2t2.github.io (s2t2.info)
 
 An [open source](https://github.com/s2t2/s2t2.github.io) blog built with [jekyll](http://jekyllrb.com/).

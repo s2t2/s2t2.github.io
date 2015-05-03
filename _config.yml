@@ -7,7 +7,7 @@ url: "http://s2t2.info" # "http://s2t2.github.io"
 baseurl: ""
 twitter_username: s2t2
 github_username:  s2t2
-exclude: ["README.md"]
+# exclude: ["README.md"]
 
 # Build settings
 markdown: redcarpet
