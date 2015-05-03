@@ -2,7 +2,7 @@
 layout: page
 title: Credits
 permalink: /credits/
-published: true
+published: false
 ---
 
 Thanks.
