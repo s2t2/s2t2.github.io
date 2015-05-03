@@ -2,7 +2,7 @@
 layout: post
 title:  "LSAT Curve"
 author: MJ Rossetti
-categories: open-data-vizualizations
+categories: open-data-visualizations
 tags: law-school admissions-test score data
 published: true
 icon_class: book

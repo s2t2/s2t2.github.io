@@ -10,8 +10,6 @@ Thanks.
  + https://github.com/
  + https://gist.github.com/
  + http://bl.ocks.org/
- + http://d3js.org/
  + http://stackoverflow.com/
- + http://railsforzombies.org/
- + http://tutorials.jumpstartlab.com/
- + http://www.meetup.com/wordpressdc/
+ + https://pages.github.com/
+ + http://jekyllrb.com/
