@@ -9,34 +9,12 @@ layout: default
   <ul class="post-list">
     {% for post in site.posts %}
       <li>
-        <h2><a class="post-link" style="margin-bottom:0;" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
         <span class="post-meta">
-          <span style="display:block;">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-          {% if post.categories %}
-            <i class="fa fa-folder-open" title="categories"></i>
-            <ul style="list-style-type:none; display:inline-block; margin:0;">
-              {% for c in post.categories %}
-                <li style="display: inline;">
-                  <a href="/{{ c }}">{{ c }}</a>
-                </li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-
-          {% if post.tags %}
-            <div>
-              <i class="fa fa-tags" title="tags"></i>
-              <ul style="list-style-type:none; display:inline-block; margin:0;">
-              {% for t in post.tags %}
-                <li style="display: inline;">
-                  <span>{{ t }}</span>
-                </li>
-              {% endfor %}
-              </ul>
-            </div>
-          {% endif %}
+          <!--i class="fa fa-{{ post.icon_class }}"></i-->
+          {{ post.date | date: "%Y-%m-%d" }}
         </span>
+        &nbsp;
+        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
       </li>
     {% endfor %}
   </ul>

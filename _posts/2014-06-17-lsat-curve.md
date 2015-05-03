@@ -5,7 +5,7 @@ author: MJ Rossetti
 categories: open-data-visualizations
 tags: law-school admissions-test score data
 published: true
-icon_class: book
+icon_class: university
 technologies: javascript rails json d3.js
 ---
 
