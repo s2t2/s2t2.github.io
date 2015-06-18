@@ -24,7 +24,11 @@ Start local web server and view site at localhost:4000.
 bundle exec jekyll serve
 ````
 
-Edit a [post](/_posts) or implement a new feature, then create a [pull request](https://github.com/s2t2/s2t2.github.io/pulls/).
+Create a new post or edit an existing post in the [posts](/_posts) directory.
+
+Or implement a new feature.
+
+Then create a [pull request](https://github.com/s2t2/s2t2.github.io/pulls/).
 
 ### Production
 
