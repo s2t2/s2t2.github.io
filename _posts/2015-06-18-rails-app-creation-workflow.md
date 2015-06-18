@@ -12,7 +12,7 @@ technologies: ruby rails git
 This document describes a process of creating a new rails application from scratch, using rails version 4.2.0.
 It reflects the author's personal development preferences.
 
-Substitute each apprearance of *MY_APP* with the name of your app, each appearance of *DB_PROVIDER* with your database provider name, and each appearance of *xyz123* with a unique string value.
+> Substitute each apprearance of *MY_APP* with the name of your app, *DB_PROVIDER* with your database provider name, *xyz123* with a unique string value, and *MY_NAME* with your name.
 
 ## Create a new app and set up version control.
 
@@ -170,6 +170,41 @@ Then create the database.
 
 ```` sh
 bundle exec rake db:create
+````
+
+## Create supporting documents.
+
+Create and edit **README.md**, **CREDITS.md**, and **LICENSE.md**, using the MIT License template:
+
+````
+The MIT License (MIT)
+
+Copyright (c) 2015 MY_NAME
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+````
+
+Commit documents to version control.
+
+```` sh
+git commit -am "adding documents"
 ````
 
 ## Wrapping up
