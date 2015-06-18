@@ -12,7 +12,7 @@ technologies: ruby rails git
 This document describes a process of creating a new rails application from scratch, using rails version 4.2.0.
 It reflects the author's personal development preferences.
 
-Substitute each apprearance of *MY_APP* with the name of your app, and each appearance of *xyz123* with a unique string value.
+Substitute each apprearance of *MY_APP* with the name of your app, each appearance of *DB_PROVIDER* with your database provider name, and each appearance of *xyz123* with a unique string value.
 
 ## Create a new app and set up version control.
 
@@ -24,7 +24,7 @@ git init .
 
 ## Protect secrets.
 
-Add `/config/secrets.yml` to **.gitignore** file and save it before making the initial commit.
+Add `/config/secrets.yml` to **.gitignore** file and save it before making the initial commit:
 
 ```` sh
 git add . # then double-check to make sure the config/secrets.yml didn't get checked-in.
@@ -41,7 +41,7 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password: <%= ENV['MY_DB_PROVIDER_ROOT_PASSWORD'] %>
+  password: <%= ENV['DB_PROVIDER_ROOT_PASSWORD'] %>
   socket: /tmp/mysql.sock
 
 development:
@@ -80,7 +80,7 @@ production:
 Finally, edit **/.bash_profile** (or **/.bashrc**) to ensure existence of the variables referenced above.
 
 ```` sh
-export MY_DB_PROVIDER_ROOT_PASSWORD="xyz123"
+export DB_PROVIDER_ROOT_PASSWORD="xyz123"
 export MY_APP_DATABASE_PASSWORD="xyz123"
 export MY_APP_SECRET_KEY_BASE="xyz123"
 ````
@@ -100,7 +100,7 @@ Revise **Gemfile** using the following template, commenting-out the [rubygems](h
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.0'
-gem 'mysql2'
+gem 'mysql2' # or 'pg' based on your preferred DB_PROVIDER
 # gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # gem 'coffee-rails', '~> 4.1.0'
