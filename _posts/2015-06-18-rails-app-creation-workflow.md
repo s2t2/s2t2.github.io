@@ -174,7 +174,7 @@ bundle exec rake db:create
 
 ## Create supporting documents.
 
-Create and edit **README.md**, **CREDITS.md**, and **LICENSE.md**, using the MIT License template:
+Create and edit **README.md**, **CREDITS.md**, and **LICENSE.md**. For the license, use this MIT template:
 
 ````
 The MIT License (MIT)
@@ -207,6 +207,6 @@ Commit documents to version control.
 git commit -am "adding documents"
 ````
 
-## Wrapping up
+## Keep going.
 
 That's it. Now start coding your custom app.
