@@ -9,8 +9,7 @@ icon_class: none
 technologies: ruby rails git
 ---
 
-This document describes a process of creating a new rails application from scratch, using rails version 4.2.0.
-It reflects the author's personal development preferences.
+This document describes a process of creating a new Ruby on Rails application from scratch, using rails version 4.2.0. It reflects the author's personal practices.
 
 > Substitute each apprearance of *MY_APP* with the name of your app, *DB_PROVIDER* with your database provider name, *xyz123* with a unique string value, and *MY_NAME* with your name.
 
@@ -24,12 +23,7 @@ git init .
 
 ## Protect secrets.
 
-Add `/config/secrets.yml` to **.gitignore** file and save it before making the initial commit:
-
-```` sh
-git add . # then double-check to make sure the config/secrets.yml didn't get checked-in.
-git commit -m "creating a new rails app"
-````
+Add `/config/secrets.yml` to the **.gitignore** file and save it before making an initial git commit.
 
 ## Configure environment variables.
 
@@ -86,12 +80,6 @@ export MY_APP_SECRET_KEY_BASE="xyz123"
 ````
 > After editing the bash profile, you may have to open a new terminal window for the changes to take effect.
 
-Commit changes to version control.
-
-```` sh
-git commit -am "configuring environment variables"
-````
-
 ## Install and configure gems.
 
 Revise **Gemfile** using the following template, commenting-out the [rubygems](https://rubygems.org/) you won't be using:
@@ -139,11 +127,6 @@ Remove tests directory.
 rm -rf test/
 ````
 
-Commit changes to version control.
-
-```` sh
-git commit -am "installing and configuring gems"
-````
 ## Configure generators.
 
 Configure generators in **config/application.rb**.
@@ -154,12 +137,6 @@ config.generators do |g|
   g.assets = false
   g.helper = false
 end
-````
-
-Commit changes to version control.
-
-```` sh
-git commit -am "configuring generators"
 ````
 
 ## Create database.
@@ -199,12 +176,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-````
-
-Commit documents to version control.
-
-```` sh
-git commit -am "adding documents"
 ````
 
 ## Keep going.
