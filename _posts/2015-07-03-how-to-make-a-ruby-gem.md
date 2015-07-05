@@ -6,29 +6,29 @@ categories: process-documentation
 tags: none
 published: true
 icon_class: none
-technologies: ruby rubygems bundler rake
+technologies: ruby rubygems bundler rake rails
 ---
 
-This document describes a process of creating a new Ruby gem (open source library) from scratch, using bundler. It is a compilation of [rubygems guides](http://guides.rubygems.org/) and personal practices.
+This document describes the process of creating and managing a Ruby gem (open source library).
 
-## Generate a new gem using bundler.
+## Generating
 
 ```` sh
 bundle gem mygem
 cd mygem
 ````
 
-## Edit the gem's info.
+## Describing
 
 Update the "Usage" section in *README.md* to describe desired functionality.
 
 Update at least the summary, description, and homepage attributes in *mygem.gemspec* .
 
-## Write the gem's logic.
+## Writing
 
 Make the code library do what you said it would do in the README documentation. Revise the README if necessary. Have fun!
 
-## Debug and test the gem.
+## Testing
 
 Revise *mygem.gemspec* to include the following development dependencies:
 
@@ -59,25 +59,46 @@ RSpec.describe Myclass do
 end
 ````
 
-Run tests...
+Run tests.
 
 ```` sh
 bundle exec rspec spec/
 ````
-... or open a ruby console to test manually.
+
+## Debugging
+
+Build and install the gem locally.
+
+```` sh
+rake install
+````
+
+Then require and test it within a ruby console.
+
+### Using IRB:
 
 ```` sh
 irb -Ilib -rmygem
 ````
 
-## Release the gem.
+### Using Rails:
 
-Build the gem.
+Reference local gem installation from *Gemfile*.
+
+```` rb
+gem 'mygem', '~> 0.0.1', :path => "../mygem"
+````
+
+Install gems.
 
 ```` sh
-gem build mygem.gemspec
-gem install mygem-0.0.1.gem
+bundle install
+rails console
 ````
+
+## Versioning and Releasing
+
+Edit gem version in *lib/mygem/version.rb*.
 
 Push gem to rubygems, auto-generate git tag, and release.
 

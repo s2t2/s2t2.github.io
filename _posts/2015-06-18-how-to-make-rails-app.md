@@ -9,11 +9,11 @@ icon_class: none
 technologies: ruby rails git
 ---
 
-This document describes a process of creating a new Ruby on Rails application from scratch, using rails version 4.2.0. It reflects the author's personal practices.
+This document describes the process of creating a new Ruby on Rails (version 4.2.0) application from scratch.
 
-> Substitute each apprearance of *MY_APP* with the name of your app, *DB_PROVIDER* with your database provider name, *xyz123* with a unique string value, and *MY_NAME* with your name.
+## Generating
 
-## Create a new app and set up version control.
+Create a new app and set up version control.
 
 ```` sh
 bundle exec rails new MY_APP --database=DB_PROVIDER
@@ -21,11 +21,11 @@ cd MY_APP/
 git init .
 ````
 
-## Protect secrets.
+## Securing
 
 Add `/config/secrets.yml` to the **.gitignore** file and save it before making an initial git commit.
 
-## Configure environment variables.
+## Configuring Environment Variables
 
 Edit **/config/database.yml** using the following template:
 
@@ -80,7 +80,7 @@ export MY_APP_SECRET_KEY_BASE="xyz123"
 ````
 > After editing the bash profile, you may have to open a new terminal window for the changes to take effect.
 
-## Install and configure gems.
+## Installing Development Dependencies
 
 Revise **Gemfile** using the following template, commenting-out the [rubygems](https://rubygems.org/) you won't be using:
 
@@ -127,8 +127,6 @@ Remove tests directory.
 rm -rf test/
 ````
 
-## Configure generators.
-
 Configure generators in **config/application.rb**.
 
 ```` rb
@@ -139,7 +137,7 @@ config.generators do |g|
 end
 ````
 
-## Create database.
+## Configuring the Database
 
 Ensure existence of the database user and password specified in **/config/database.yml**, using the command line or relational database management software as necessary.
 
@@ -149,7 +147,7 @@ Then create the database.
 bundle exec rake db:create
 ````
 
-## Create supporting documents.
+## Documenting
 
 Create and edit **README.md**, **CREDITS.md**, and **LICENSE.md**. For the license, use this MIT template:
 
@@ -178,6 +176,6 @@ SOFTWARE.
 
 ````
 
-## Keep going.
+## Writing
 
 That's it. Now start coding your custom app.
