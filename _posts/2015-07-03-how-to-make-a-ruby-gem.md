@@ -14,7 +14,7 @@ This document describes a process of creating a new Ruby gem (open source librar
 ## Generate a new gem using bundler.
 
 ```` sh
-bundle gem twenty_sixteen
+bundle gem mygem
 cd mygem
 ````
 
@@ -31,6 +31,7 @@ Make the code library do what you said it would do in the README documentation. 
 ## Debug and test the gem.
 
 Revise *mygem.gemspec* to include the following development dependencies:
+
 ```` rb
 spec.add_development_dependency "rspec", "~> 3.1"
 spec.add_development_dependency "pry", "~> 0.10"
@@ -39,6 +40,7 @@ spec.add_development_dependency "pry", "~> 0.10"
 Install the dependencies with `bundle install` then initialize rspec with `rspec --init`.
 
 Add this line to the top of *spec/spec_helper.rb* to facilitate reference to your gem's classes and methods:
+
 ```` rb
 require 'mygem'
 ````
@@ -47,7 +49,6 @@ Create an rspec test using the following template:
 
 ```` rb
 # spec/myclass_spec.rb
-require 'spec_helper'
 
 RSpec.describe Myclass do
   describe '#all' do
