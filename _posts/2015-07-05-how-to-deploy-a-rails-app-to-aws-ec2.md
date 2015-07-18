@@ -17,7 +17,11 @@ This document describes the process of deploying an existing Ruby on Rails appli
 
 Ensure the source code for your app is version-controlled using git, and hosted on GitHub or BitBucket.
 
-Obtain the hosted repository's SSH clone url and create a new deploy key in the repository settings.
+Obtain the hosted repository's SSH clone url.
+
+### Deploy Key
+
+Create a new deploy key in the settings for your repo.
 
 host name | clone url template | deploy key settings url template
 --- | --- | ---
