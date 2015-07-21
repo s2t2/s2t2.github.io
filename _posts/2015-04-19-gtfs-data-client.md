@@ -2,7 +2,7 @@
 layout: post
 title:  "GTFS Data Client"
 author: MJ Rossetti
-categories: open-data-services
+categories: projects
 tags: gtfs open-transit-data gtfs-data-exchange google-transit-data-feed
 published: true
 icon_class: train
