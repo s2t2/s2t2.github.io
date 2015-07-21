@@ -12,7 +12,7 @@ credits:
   - http://rakeroutes.com/blog/lets-write-a-gem-part-two/
 ---
 
-This document describes the process of creating and managing a Ruby gem (open source library).
+This document describes the process of creating and managing a [Ruby gem](https://rubygems.org/).
 
 ## Generating
 
@@ -23,75 +23,79 @@ cd mygem
 
 ## Describing
 
-Update at least the summary, description, and homepage attributes in *mygem.gemspec*.
+Update the summary, description, and homepage attributes in *mygem.gemspec*.
 
 Update the "Usage" section in *README.md* to describe desired functionality.
 
 Update the "Contributing" section in *README.md* according to the following template:
-```` md
-## Contributing
 
-Browse existing issues or create a new issue to communicate bugs, desired features, etc.
+    ## Contributing
 
-After forking the repo and pushing your changes, create a pull request referencing the applicable issue(s).
+    Browse existing issues or create a new issue to communicate bugs, desired features, etc.
 
-### Installation
+    After forking the repo and pushing your changes, create a pull request referencing the applicable issue(s).
 
-Check out the repo with `git clone git@github.com:${YOUR_GITHUB_USERNAME}/${GEM_REPO_NAME}.git`, and `cd ${GEM_REPO_NAME}`.
+    ### Installation
 
-After checking out the repo, run `bin/setup` to install dependencies.
+    Check out the repo with `git clone git@github.com:${YOUR_GITHUB_USERNAME}/${GEM_REPO_NAME}.git`, and `cd ${GEM_REPO_NAME}`.
 
-### Testing
+    After checking out the repo, run `bin/setup` to install dependencies.
 
-Run `bundle exec rake` or `bundle exec rspec spec/` to run the tests.
+    ### Testing
 
-You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+    Run `bundle exec rake` or `bundle exec rspec spec/` to run the tests.
 
-To install this gem onto your local machine, run `bundle exec rake install`.
+    You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-### Releasing
+    To install this gem onto your local machine, run `bundle exec rake install`.
 
-Update the version number in `version.rb`, then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-````
+    ### Releasing
+
+    Update the version number in `version.rb`, then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Writing
 
-Make the code library do what you said it would do in the README documentation. Revise the README if necessary. Have fun!
+Make the library do what you said it would do. Revise *README.md* as necessary.
+
+Have fun!
 
 ## Testing
 
+The new gem generation process prompts you to choose a test suite, and will configure much of it for you. Check your configuration using the steps below as necessary.
+
+### Configuring Rspec
+
 Revise *mygem.gemspec* to include the following development dependencies:
 
-```` rb
-spec.add_development_dependency "rspec", "~> 3.1"
-spec.add_development_dependency "pry", "~> 0.10"
-````
+    spec.add_development_dependency "rspec", "~> 3.1"
+    spec.add_development_dependency "pry", "~> 0.10"
 
 Install the dependencies with `bundle install` then initialize rspec with `rspec --init`.
 
-Add this line to the top of *spec/spec_helper.rb* to facilitate reference to your gem's classes and methods:
+Add these lines to the top of *spec/spec_helper.rb* to facilitate reference to your gem's classes and methods during testing:
 
-```` rb
-require 'mygem'
-````
+    $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+    require 'mygem'
+    require 'pry'
+
+### Writing Tests
 
 Create an rspec test (*spec/myclass_spec.rb*) using the following template:
 
-```` rb
-require 'spec_helper'
+    require 'spec_helper'
 
-Mygem
-  RSpec.describe Myclass do
-    describe '#all' do
-      it "does some stuff" do
-        expect(true)
+    Mygem
+      RSpec.describe Myclass do
+        describe '#all' do
+          it "does some stuff" do
+            expect(true)
+          end
+        end
       end
     end
-  end
-end
-````
 
-Run tests.
+
+### Running Tests
 
 ```` sh
 bundle exec rspec spec/
@@ -101,7 +105,7 @@ bundle exec rspec spec/
 
 ### Default Console
 
-Newly-generated ruby gems come with an interactive console that auto-loads the gem library for you. Configure *bin/console* to use pry instead of IRB, then start it up.
+The new gem generation process provides an interactive console that auto-loads the gem library for you. Configure *bin/console* to use pry instead of IRB, then start it up.
 
 ````
 #!/usr/bin/env ruby
