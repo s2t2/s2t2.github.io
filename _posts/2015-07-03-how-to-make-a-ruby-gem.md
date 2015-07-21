@@ -7,6 +7,9 @@ tags: none
 published: true
 icon_class: none
 technologies: ruby rubygems bundler rake rails
+credits:
+  - http://rakeroutes.com/blog/lets-write-a-gem-part-one/
+  - http://rakeroutes.com/blog/lets-write-a-gem-part-two/
 ---
 
 This document describes the process of creating and managing a Ruby gem (open source library).
@@ -20,9 +23,36 @@ cd mygem
 
 ## Describing
 
+Update at least the summary, description, and homepage attributes in *mygem.gemspec*.
+
 Update the "Usage" section in *README.md* to describe desired functionality.
 
-Update at least the summary, description, and homepage attributes in *mygem.gemspec* .
+Update the "Contributing" section in *README.md* according to the following template:
+```` md
+## Contributing
+
+Browse existing issues or create a new issue to communicate bugs, desired features, etc.
+
+After forking the repo and pushing your changes, create a pull request referencing the applicable issue(s).
+
+### Installation
+
+Check out the repo with `git clone git@github.com:${YOUR_GITHUB_USERNAME}/${GEM_REPO_NAME}.git`, and `cd ${GEM_REPO_NAME}`.
+
+After checking out the repo, run `bin/setup` to install dependencies.
+
+### Testing
+
+Run `bundle exec rake` or `bundle exec rspec spec/` to run the tests.
+
+You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+
+To install this gem onto your local machine, run `bundle exec rake install`.
+
+### Releasing
+
+Update the version number in `version.rb`, then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+````
 
 ## Writing
 
@@ -45,15 +75,17 @@ Add this line to the top of *spec/spec_helper.rb* to facilitate reference to you
 require 'mygem'
 ````
 
-Create an rspec test using the following template:
+Create an rspec test (*spec/myclass_spec.rb*) using the following template:
 
 ```` rb
-# spec/myclass_spec.rb
+require 'spec_helper'
 
-RSpec.describe Myclass do
-  describe '#all' do
-    it "does some stuff" do
-      expect(true)
+Mygem
+  RSpec.describe Myclass do
+    describe '#all' do
+      it "does some stuff" do
+        expect(true)
+      end
     end
   end
 end
@@ -67,29 +99,52 @@ bundle exec rspec spec/
 
 ## Debugging
 
-Build and install the gem locally.
+### Default Console
 
-```` sh
-rake install
+Newly-generated ruby gems come with an interactive console that auto-loads the gem library for you. Configure *bin/console* to use pry instead of IRB, then start it up.
+
+````
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "mygem"
+
+# You can add fixtures and/or initialization code here to make experimenting
+# with your gem easier. You can also use a different console, if you like.
+
+# (If you use this, don't forget to add pry to your Gemfile!)
+require "pry"
+Pry.start
+
+# require "irb"
+# IRB.start
 ````
 
-Then require and test it within a ruby console.
-
-### Using IRB:
-
 ```` sh
-irb -Ilib -rmygem
+bin/console
 ````
 
-### Using Rails:
+### Alternative Consoles
 
-Reference local gem installation from *Gemfile*.
+Alternatively install, load, and test the gem locally using other consoles.
+
+```` sh
+bundle exec rake install
+````
+
+#### IRB:
+
+```` sh
+irb -Ilib -rmygem # will auto-load the gem in a new IRB console
+````
+
+#### Rails:
+
+Reference local gem installation from *Gemfile*, then install the gem before starting a console.
 
 ```` rb
 gem 'mygem', '~> 0.0.1', :path => "../mygem"
 ````
-
-Install gems.
 
 ```` sh
 bundle install
@@ -103,5 +158,5 @@ Edit gem version in *lib/mygem/version.rb*.
 Push gem to rubygems, auto-generate git tag, and release.
 
 ```` sh
-rake release
+bundle exec rake release
 ````
