@@ -75,14 +75,14 @@ brew linkapps python
 
 ## Configuration Files and Credentials
 
-Use the `s3_sync` ruby gem to recover files from s3. This requires you to obtain the configuration variables used during previous syncs.
+Use the [`s3_sync`](https://github.com/s2t2/s3-sync-ruby) ruby gem to recover files from s3. This requires you to obtain the configuration variables used during previous syncs.
 
 ```` sh
 gem install "s3_sync"
 ````
 
 ```` rb
-require 's3_sync'
+require "s3_sync"
 
 S3Sync.configure do |config|
   config.key_id = ENV["AWS_S3_KEY_ID"]
@@ -95,21 +95,25 @@ S3Sync.configure do |config|
     File.join(Dir.home,".ssh","config")
   ]
 end
+
 S3Sync.download.new
 ````
 
 Configure [Rubygems credentials](https://rubygems.org/profile/edit), typing your password when prompted:
+
 ```` sh
 curl -u $YOUR_RUBYGEMS_USERNAME https://rubygems.org/api/v1/api_key.yaml > ~/.gem/credentials; chmod 0600 ~/.gem/credentials
 ````
 
 Configure [Git credentials](https://help.github.com/categories/setup/):
+
 ```` sh
 git config user.name $YOUR_GITHUB_USERNAME
 git config user.email $YOUR_GITHUB_EMAIL
 ````
 
 Generate [new ssh keys](https://help.github.com/articles/generating-ssh-keys/#step-2-generate-a-new-ssh-key), and copy the public key to GitHub and other hosts:
+
 ```` sh
 ssh-keygen -t rsa -b 4096 -C $YOUR_SSH_EMAIL
 pbcopy < ~/.ssh/id_rsa.pub
