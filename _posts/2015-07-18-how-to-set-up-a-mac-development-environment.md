@@ -6,11 +6,16 @@ categories: process-documentation
 tags: none
 published: true
 icon_class: none
-technologies: mac os-x chrome atom homebrew
+technologies: mac os-x chrome atom homebrew ruby bundler python lunchy postgresql mysql
 credits:
   - http://octopress.org/docs/setup/rbenv/
   - https://help.github.com/articles/associating-text-editors-with-git/#using-atom-as-your-editor
   - http://stackoverflow.com/a/28142874/670433
+  - http://www.moncefbelyamani.com/how-to-install-postgresql-on-a-mac-with-homebrew-and-lunchy/
+  - http://blog.willj.net/2011/05/31/setting-up-postgresql-for-ruby-on-rails-development-on-os-x/
+  - http://stackoverflow.com/a/17936043/670433
+  - http://www.postgresql.org/docs/current/interactive/app-psql.html
+  - http://www.postgresql.org/docs/7.0/static/security.htm
 ---
 
 This document describes the process of configuring a new Mac OS-X development environment from scratch.
@@ -71,6 +76,72 @@ gem install bundler
 ```` sh
 brew install python
 brew linkapps python
+````
+
+## Databases
+
+Use [`lunchy`](https://github.com/eddiezane/lunchy) gem to manage services/daemons, including database servers.
+
+```` sh
+gem install lunchy
+````
+
+Restart your terminal.
+
+### PostgreSQL
+
+Install.
+
+```` sh
+brew install postgresql
+ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents # to have launchd start postgresql at login
+lunchy start postgresql
+createdb # to create a database named after your root database user, which is named after your mac username; avoids `psql: FATAL:  database $USER does not exist`
+````
+
+Set a password for the database root user.
+
+````
+psql -U $USER -c "ALTER USER $USER WITH PASSWORD 'CHANGE_ME';"
+````
+
+To require password authentication, find the location of the *pg_hba.conf* file using `psql -U $USER -c "SHOW hba_file;"`, and edit it to resemble to the following template:
+
+    # TYPE  DATABASE        USER            ADDRESS                 METHOD
+    local   all             all                                     md5
+    host    all             all             127.0.0.1/32            md5
+    host    all             all             ::1/128                 md5
+
+Basically you are just changing the *methods* from `trust` to `md5`. Restart the server to apply the authentication changes.
+
+```` sh
+lunchy restart postgresql
+psql -U $USER # you should now be prompted for a password
+````
+
+Helpful management commands:
+
+```` sql
+SELECT * FROM pg_users; -- show users `\du`
+SELECT * FROM pg_database; -- show databases `\l`
+````
+
+Optionally create an application database and database user.
+
+```` rb
+CREATE USER app_user WITH password 'CHANGE_ME';
+CREATE DATABASE app_db;
+GRANT ALL PRIVILEGES ON DATABASE app_db to app_user;
+````
+
+Finally, install [pgAdmin](http://www.pgadmin.org/download/macosx.php) database management software. Specify your root database user credentials when connecting to the local database server.
+
+### MySQL
+
+Install.
+
+```` sh
+brew install mysql
 ````
 
 ## Configuration Files and Credentials
