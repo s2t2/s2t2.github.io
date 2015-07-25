@@ -68,7 +68,6 @@ Restart your terminal for the profile changes to take place.
 rbenv install 2.2.0 # to install a specific ruby version from the internet
 rbenv rehash # run this after installing a new ruby version
 rbenv global 2.2.0 # to set a specific ruby version for use
-rbenv bundler on # to obviate need to type 'bundle exec' before rake and other commands
 gem install bundler
 ````
 
@@ -184,6 +183,7 @@ Optionally create an application database and database user.
 ```` rb
 CREATE USER app_user WITH password 'CHANGE_ME';
 ALTER USER app_user CREATEDB;
+ALTER USER app_user WITH SUPERUSER;
 CREATE DATABASE app_db;
 GRANT ALL PRIVILEGES ON DATABASE app_db to app_user;
 ````

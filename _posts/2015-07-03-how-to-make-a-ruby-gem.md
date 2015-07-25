@@ -8,8 +8,11 @@ published: true
 icon_class: none
 technologies: ruby rubygems bundler rake rails
 credits:
+  - http://guides.rubygems.org/make-your-own-gem/
   - http://rakeroutes.com/blog/lets-write-a-gem-part-one/
   - http://rakeroutes.com/blog/lets-write-a-gem-part-two/
+  - http://elgalu.github.io/2013/tools-for-creating-your-first-ruby-gem/
+  - http://www.alexedwards.net/blog/how-to-make-a-rubygem-part-two
 ---
 
 This document describes the process of creating and managing a [Ruby gem](https://rubygems.org/).
@@ -155,12 +158,18 @@ bundle install
 rails console
 ````
 
+## Documenting
+
+Write comments above public-facing methods according to the [YARD](http://yardoc.org/) specification.
+
+Revise *mygem.gemspec* to include the following development dependency:
+
+    spec.add_development_dependency "yard"
+
+After installing with `bundle install`, run `bundle exec yard doc` to parse comments and/or `bundle exec yard server` to view documentation at *localhost:8808*.
+
 ## Versioning and Releasing
 
 Edit gem version in *lib/mygem/version.rb*.
 
-Push gem to rubygems, auto-generate git tag, and release.
-
-```` sh
-bundle exec rake release
-````
+Run `bundle exec rake release` to auto-generate git tag and push to github and rubygems.
