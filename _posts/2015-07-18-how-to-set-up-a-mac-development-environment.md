@@ -69,6 +69,8 @@ rbenv install 2.2.0 # to install a specific ruby version from the internet
 rbenv rehash # run this after installing a new ruby version
 rbenv global 2.2.0 # to set a specific ruby version for use
 gem install bundler
+gem install rake --version='10.4.2'
+gem install rdoc -v '4.2.0'
 ````
 
 ### Python

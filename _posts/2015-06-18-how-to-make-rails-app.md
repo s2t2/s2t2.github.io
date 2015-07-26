@@ -21,10 +21,6 @@ cd MY_APP/
 git init .
 ````
 
-## Securing
-
-Add `/config/secrets.yml` to the **.gitignore** file and save it before making an initial git commit.
-
 ## Configuring Environment Variables
 
 Edit **/config/database.yml** using the following template:
@@ -58,10 +54,10 @@ Edit **config/secrets.yml** using the following template:
 
 ```` yaml
 development:
-  secret_key_base: xyz123
+  secret_key_base: <%= ENV["MY_APP_SECRET_KEY_BASE"] %>
 
 test:
-  secret_key_base: xyz123
+  secret_key_base: <%= ENV["MY_APP_SECRET_KEY_BASE"] %>
 
 production:
   secret_key_base: <%= ENV["MY_APP_SECRET_KEY_BASE"] %>
