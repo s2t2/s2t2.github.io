@@ -13,9 +13,12 @@ credits:
  - https://devcenter.heroku.com/articles/ruby-versions
  - https://devcenter.heroku.com/articles/ruby-default-web-server
  - https://devcenter.heroku.com/articles/getting-started-with-rails4#done
+ - https://devcenter.heroku.com/articles/heroku-postgresql#connection-permissions
 ---
 
 This document describes the process of deploying a Ruby on Rails application to a production server hosted by Heroku.
+
+## Deployment
 
 Download [heroku toolbelt](https://toolbelt.heroku.com/) to enable `heroku` command line tools.
 
@@ -25,15 +28,20 @@ cd ~/myapp
 heroku create
 heroku apps:rename myapp
 # heroku domains:add example.com
-config:set KEY1=VALUE1 [KEY2=VALUE2 ...]
+heroku config:set KEY1=VALUE1 [KEY2=VALUE2 ...]
 git push heroku master
-heroku pg:reset DATABASE # instead of rake db:create
-heroku run bundle exec rake db:migrate
-heroku run bundle exec rake db:seed
 ````
 
-Other helpful commands:
-```` sh
-heroku pg:psql
+## Database Management
+
+### Configuration
+
 heroku pg:credentials DATABASE
+heroku pg:psql
+
+
+```` sh
+# heroku pg:reset DATABASE # instead of rake db:create && rake db:drop
+heroku run bundle exec rake db:migrate
+heroku run bundle exec rake db:seed
 ````

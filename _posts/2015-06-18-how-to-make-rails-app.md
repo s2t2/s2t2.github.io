@@ -6,7 +6,9 @@ categories: process-documentation
 tags: none
 published: true
 icon_class: none
-technologies: ruby rails git
+technologies: git ruby rubygems bundler rails rake bower
+credits:
+ - http://blog.blenderbox.com/2014/04/16/gitignore-everything-inside-a-directory/
 ---
 
 This document describes the process of creating a new Ruby on Rails (version 4.2.0) application from scratch.
@@ -76,7 +78,7 @@ export MY_APP_SECRET_KEY_BASE="xyz123"
 ````
 > After editing the bash profile, you may have to open a new terminal window for the changes to take effect.
 
-## Installing Development Dependencies
+## Installing Back-end Dependencies
 
 Revise **Gemfile** using the following template, commenting-out the [rubygems](https://rubygems.org/) you won't be using:
 
@@ -132,6 +134,40 @@ config.generators do |g|
   g.helper = false
 end
 ````
+
+## Installing Front-end Dependencies
+
+Create a file called *bower.json* in the root directory, optionally generating with `bower init`:
+
+    {
+      "name": "my-app",
+      "dependencies": {
+        "bootstrap": "~3.3.4",
+        "d3": "~3.5.5",
+        "jquery": "~2.1.4",
+        "jquery.ui": "~1.11.4",
+        "octicons": "*"
+      }
+    }
+
+
+Create a file called *.bowerrc* in the root directory of your app, to resemble the following template:
+
+    {
+      "directory": "vendor/assets/components"
+    }
+
+Install components with `bower install`.
+
+Require components in *app/assets/javascripts/application.js*:
+
+    //= require d3/d3
+
+> NOTE: place all component require statements above `//= require_tree .`
+
+Remove installed components from source control by adding a file at *vendor/assets/components/.gitignore* with the following contents:
+
+    [^.]*
 
 ## Configuring the Database
 

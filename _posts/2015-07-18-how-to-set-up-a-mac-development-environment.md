@@ -17,6 +17,7 @@ credits:
   - http://www.postgresql.org/docs/current/interactive/app-psql.html
   - http://www.postgresql.org/docs/7.0/static/security.htm
   - http://www.cyberciti.biz/faq/howto-add-postgresql-user-account/
+  - http://dotwell.io/taking-advantage-of-bower-in-your-rails-4-app/
 ---
 
 This document describes the process of configuring a new Mac OS-X development environment from scratch.
@@ -39,15 +40,13 @@ Download [solarized](http://ethanschoonover.com/solarized) terminal theme.
 
 Import the *osx-solarized.app-colors-solarized/Solarized Dark ansi.terminal* theme via terminal settings.
 
-## Package Manager
+## Homebrew
 
 Install [homebrew](http://brew.sh/) package manager.
 
 ```` sh
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ````
-
-## Programming Languages
 
 ### Ruby
 
@@ -78,6 +77,21 @@ gem install rdoc -v '4.2.0'
 ```` sh
 brew install python
 brew linkapps python
+````
+
+### Node
+
+```` sh
+brew install node
+````
+
+#### Bower
+
+```` sh
+cd my_app/
+npm install -g bower
+# /usr/local/bin/bower -> /usr/local/lib/node_modules/bower/bin/bower
+# bower@1.4.1 /usr/local/lib/node_modules/bower
 ````
 
 ## Configuration Files and Credentials

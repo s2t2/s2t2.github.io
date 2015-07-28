@@ -15,4 +15,4 @@ An open source web application that integrates
  [General Transit Feed Specification (GTFS)](https://developers.google.com/transit/gtfs/)
  data from participating transit agencies.
 
-Check out the source code at https://github.com/s2t2/branford-station.
+Check out the source code at https://github.com/s2t2/branford_station.
