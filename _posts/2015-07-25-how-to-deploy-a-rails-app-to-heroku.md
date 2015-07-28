@@ -34,14 +34,12 @@ git push heroku master
 
 ## Database Management
 
-### Configuration
-
-heroku pg:credentials DATABASE
-heroku pg:psql
-
+Use the command line tools or the heroku console to manage environment variables.
 
 ```` sh
-# heroku pg:reset DATABASE # instead of rake db:create && rake db:drop
+heroku pg:credentials DATABASE
+heroku pg:reset DATABASE # equivalent to `rake db:drop && rake db:create`
 heroku run bundle exec rake db:migrate
 heroku run bundle exec rake db:seed
+heroku pg:psql # log in to execute custom queries
 ````

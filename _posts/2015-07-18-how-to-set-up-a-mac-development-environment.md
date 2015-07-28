@@ -24,7 +24,7 @@ This document describes the process of configuring a new Mac OS-X development en
 
 ## System Preferences
 
-Configure hot-corners, keyboard shortcuts, keystroke settings, etc.
+Configure hot-corners, [keyboard shortcuts](http://lifehacker.com/343328/create-a-keyboard-shortcut-for-any-menu-action-in-any-program), keystroke settings, etc.
 
 ## Browser
 
@@ -181,11 +181,17 @@ lunchy restart postgresql
 psql -U $USER # you should now be prompted for a password
 ````
 
-Helpful management commands:
+Helpful psql commands and their SQL equivalents:
 
 ```` sql
-SELECT * FROM pg_user; -- show users `\du`
-SELECT * FROM pg_database; -- show databases `\l`
+SELECT * FROM pg_user;
+-- or... `\du`
+
+SELECT * FROM pg_database;
+-- or... `\l`
+
+SELECT * FROM pg_table WHERE schema_name = 'my_db';
+-- or... `\connect my_db` and `\dt`
 ````
 
 Optionally install the pg gem/driver if you are going to be connecting with a Ruby on Rails app. Find the *pg_config* file with `psql -U $USER -c "SHOW config_file;"`, navigate to .
