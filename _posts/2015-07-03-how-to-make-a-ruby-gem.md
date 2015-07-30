@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How to create a Ruby gem from scratch"
+title:  "How to create a Ruby gem"
 author: MJ Rossetti
 categories: process-documentation
 tags: none

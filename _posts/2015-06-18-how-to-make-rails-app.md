@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How to create a Ruby on Rails application from scratch"
+title:  "How to create a Ruby on Rails application"
 author: MJ Rossetti
 categories: process-documentation
 tags: none
@@ -11,7 +11,7 @@ credits:
  - http://blog.blenderbox.com/2014/04/16/gitignore-everything-inside-a-directory/
 ---
 
-This document describes the process of creating a new Ruby on Rails (version 4.2.0) application from scratch.
+This document describes the process of creating a new Ruby on Rails application from scratch, using Rails version 4.2.0.
 
 ## Generating
 
@@ -137,6 +137,24 @@ end
 
 ## Installing Front-end Dependencies
 
+Create a file called **package.json** in the root directory, optionally generating with `npm init`:
+
+    {
+      "name": "my-app",
+      "version": "0.0.1",
+      "dependencies": {
+        "bower": "~1.4"
+      },
+      "engine": {
+        "node": "0.12.7",
+        "npm": "2.12.1"
+      },
+      "scripts": {
+        "postinstall": "./node_modules/bower/bin/bower install"
+      }
+    }
+
+
 Create a file called *bower.json* in the root directory, optionally generating with `bower init`:
 
     {
@@ -157,7 +175,7 @@ Create a file called *.bowerrc* in the root directory of your app, to resemble t
       "directory": "vendor/assets/components"
     }
 
-Install components with `bower install`.
+Install components with `bower install`. Alternatively run `npm install`, which, if **package.json** is configured according to the template above, will also perform a bower installation.
 
 Require components in *app/assets/javascripts/application.js*:
 

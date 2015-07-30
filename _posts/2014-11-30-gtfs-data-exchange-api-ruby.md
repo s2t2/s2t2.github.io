@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "GTFS Data Exchange API (Ruby gem)"
+title:  "GTFS Data Exchange API"
 author: MJ Rossetti
-categories: libraries
+categories: projects
 tags: gtfs open-transit-data gtfs-data-exchange
 published: true
 icon_class: book

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How to deploy a Ruby on Rails app to an AWS EC2 production server"
+title:  "How to deploy a Ruby on Rails app to AWS EC2"
 author: MJ Rossetti
 categories: process-documentation
 tags: none

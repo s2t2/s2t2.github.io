@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How to set up a Mac OS-X development environment from scratch"
+title:  "How to set up a Mac OS-X development environment"
 author: MJ Rossetti
 categories: process-documentation
 tags: none
