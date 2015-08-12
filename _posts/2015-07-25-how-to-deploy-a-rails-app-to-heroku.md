@@ -17,11 +17,12 @@ credits:
  - https://coderwall.com/p/6bmygq/heroku-rails-bower
  - https://github.com/heroku/heroku-buildpack-nodejs
  - https://github.com/heroku/heroku-buildpack-ruby
+ - http://www.nateberkopec.com/2015/07/29/scaling-ruby-apps-to-1000-rpm.html
 ---
 
 This document describes the process of deploying a Ruby on Rails application to a production server hosted by Heroku.
 
-## Configuration
+## Prerequisites
 
 Download [heroku toolbelt](https://toolbelt.heroku.com/) to enable `heroku` command line tools.
 
@@ -30,13 +31,15 @@ heroku login
 cd ~/myapp
 ````
 
-Create and configure new heroku application.
+## Configuration
+
+Create and configure a new heroku application.
 
 ````
 heroku create
 heroku apps:rename myapp
-# heroku domains:add example.com
 heroku config:set KEY1=VALUE1 [KEY2=VALUE2 ...]
+# heroku domains:add example.com
 ````
 
 ### Custom Buildpacks
@@ -62,7 +65,13 @@ Deploy:
 git push heroku master
 ````
 
-## Database Management
+## Add-ons
+
+```` sh
+heroku addons
+````
+
+### Database
 
 ```` sh
 heroku pg:credentials DATABASE
@@ -74,3 +83,27 @@ heroku run bundle exec rake db:seed
 > `heroku pg:reset DATABASE` is roughly equivalent to `rake db:drop && rake db:create`
 
 Use `heroku pg:psql` to execute custom SQL queries in a production database console.
+
+### Tasks
+
+```` sh
+heroku addons:create scheduler
+heroku addons:open scheduler
+````
+
+### Mail
+
+```` sh
+heroku addons:create sendgrid:starter
+heroku addons:open sendgrid
+heroku config:get SENDGRID_USERNAME
+heroku config:get SENDGRID_PASSWORD
+````
+
+## Debugging
+
+````sh
+heroku logs
+heroku logs -t # for tail
+heroku logs -n 1500
+````
