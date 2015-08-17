@@ -13,7 +13,7 @@ credits :
   - https://getsatisfaction.com/cleardb/topics/mysql_said_ssl_connection_error
 ---
 
-The process differs, depending on the database provider (MySQL vs PostgreSQL).
+The process differs, depending on the database provider (MySQL vs PostgreSQL), and your operating system (Mac OS or Windows OS).
 
 ## MySQL
 
