@@ -78,9 +78,9 @@ Key File | choose the 'abc123-key-no-password.pem' file
 Certificate | choose the `abc123-cert.pem` file
 CA Cert | choose the `cleardb-ca.pem` file
 
+> PRO-TIP: To avoid re-entering this configuration upon each subsequent connection, save the configuration to favorites, test the connection, and save again before connecting for the first time.
 
 > NOTE: To select certificate files, click the key file selector button, check "show hidden files" and navigate to `~/.ssh/gwu-badm-2301/`.
-
 
 #### Windows OS
 
