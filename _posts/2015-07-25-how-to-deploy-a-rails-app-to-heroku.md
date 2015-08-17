@@ -106,4 +106,5 @@ heroku config:get SENDGRID_PASSWORD
 heroku logs
 heroku logs -t # for tail
 heroku logs -n 1500
+heroku run bash
 ````
