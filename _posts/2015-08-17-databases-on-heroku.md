@@ -74,7 +74,7 @@ Password | obtain from "Endpoint Information" page
 Database | obtain from `CLEARDB_DATABASE_URL`
 Port | 3306 (or leave blank)
 Connect using SSL | true (check the box)
-Key File | choose the 'abc123-key-no-password.pem' file
+Key File | choose the `abc123-key-no-password.pem` file
 Certificate | choose the `abc123-cert.pem` file
 CA Cert | choose the `cleardb-ca.pem` file
 
