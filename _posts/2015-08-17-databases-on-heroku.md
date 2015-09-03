@@ -11,6 +11,7 @@ credits :
   - http://stackoverflow.com/questions/9822313/remote-connect-to-cleardb-heroku-database
   - https://getsatisfaction.com/cleardb/topics/unable_to_download_cert_error_207
   - https://getsatisfaction.com/cleardb/topics/mysql_said_ssl_connection_error
+  - https://jamie.curle.io/posts/creating-a-read-only-user-in-postgres/#tldr
 ---
 
 The process differs, depending on the database provider (MySQL vs PostgreSQL), and your operating system (Mac OS or Windows OS).
@@ -103,3 +104,9 @@ Download todo.
 #### Windows OS
 
 Download todo.
+
+### Grant permissions to new database users
+
+````sql
+CREATE USER new_user WITH ENCRYPTED PASSWORD 'my_password';
+````
