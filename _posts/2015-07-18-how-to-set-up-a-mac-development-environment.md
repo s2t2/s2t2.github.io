@@ -18,6 +18,7 @@ credits:
   - http://www.postgresql.org/docs/7.0/static/security.htm
   - http://www.cyberciti.biz/faq/howto-add-postgresql-user-account/
   - http://dotwell.io/taking-advantage-of-bower-in-your-rails-4-app/
+  - https://dev.mysql.com/doc/refman/5.0/en/set-password.html
 ---
 
 This document describes the process of configuring a new Mac OS-X development environment from scratch.
@@ -218,6 +219,25 @@ Install.
 
 ```` sh
 brew install mysql
+ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
+lunchy start mysql
+mysql -uroot
+````
+
+Secure the connection.
+
+```` sql
+DELETE FROM mysql.user WHERE host <> 'localhost' OR USER = "";
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('cleartext password');
+````
+
+Helpful mysql commands:
+
+```` sql
+SELECT * FROM mysql.user;
+SELECT distinct table_schema FROM information_schema.tables; -- or `SHOW DATABASES;`
+SELECT * FROM information_schema.tables;
+SELECT * FROM information_schema.tables WHERE table_schema = 'my_db'
 ````
 
 ## Graphing Library
