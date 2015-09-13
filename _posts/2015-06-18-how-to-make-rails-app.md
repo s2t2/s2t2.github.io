@@ -9,6 +9,7 @@ icon_class: none
 technologies: git ruby rubygems bundler rails rake bower
 credits:
  - http://blog.blenderbox.com/2014/04/16/gitignore-everything-inside-a-directory/
+ - https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql
 ---
 
 This document describes the process of creating a new Ruby on Rails application from scratch, using Rails version 4.2.0.
@@ -190,6 +191,18 @@ Remove installed components from source control by adding a file at *vendor/asse
 ## Configuring the Database
 
 Ensure existence of the database user and password specified in **/config/database.yml**, using the command line or relational database management software as necessary.
+
+```` sql
+-- mysql:
+SELECT * FROM mysql.user;
+CREATE USER 'app_user'@'localhost' IDENTIFIED BY 'app user password';
+GRANT ALL ON *.* to 'my_app'@'localhost';
+-- postgresql:
+SELECT * FROM pg_user;
+CREATE USER app_user WITH ENCRYPTED PASSWORD 'app user password';
+ALTER USER app_user CREATEDB;
+ALTER USER app_user WITH SUPERUSER;
+````
 
 Then create the database.
 
