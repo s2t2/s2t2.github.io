@@ -1,13 +1,14 @@
 # Site settings
-title: "data-creative.info"
+title: "Data Creative"
 author: "MJ Rossetti"
-description: "an open source blog"
+description: "Data products and services brought to life."
 source_url: "https://github.com/data-creative/data-creative.github.io"
 url: "http://data-creative.info" # "http://data-creative.github.io"
 baseurl: ""
 twitter_username: data_creative
 github_username:  data-creative
 exclude: ["README.md"]
+google_analytics_tracker_id: 'UA-61038121-1'
 
 # Build settings
 markdown: redcarpet
