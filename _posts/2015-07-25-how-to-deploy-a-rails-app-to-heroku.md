@@ -73,6 +73,10 @@ heroku addons
 
 ### Database
 
+Follow the PostgreSQL or MySQL instructions, depending on your database choice.
+
+#### PostgreSQL
+
 ```` sh
 heroku pg:credentials DATABASE
 heroku pg:reset DATABASE
@@ -83,6 +87,25 @@ heroku run bundle exec rake db:seed
 > `heroku pg:reset DATABASE` is roughly equivalent to `rake db:drop && rake db:create`
 
 Use `heroku pg:psql` to execute custom SQL queries in a production database console.
+
+#### MySQL
+
+Revise `database.yml`:
+
+```` yml
+production:
+  url: <%= ENV['DATABASE_URL'] %>
+````
+
+Create a new `DATABASE_URL` heroku config variable as a duplicate of the `CLEARDB_DATABASE_URL`
+ except change the `mysql` part to `mysql2`. This avoids a [mysql gem installation error](http://stackoverflow.com/q/26955058/670433).
+
+```` sh
+heroku run bundle exec rake db:migrate
+heroku run bundle exec rake db:seed
+````
+
+> NOTE: you may have to run these bundle commands within a `heroku run bash` prompt...
 
 ### Tasks
 
@@ -108,5 +131,6 @@ heroku logs
 heroku logs -t # for tail
 heroku logs -n 1500
 heroku run bash
+heroku run console
 heroku pg:backups capture --app my-app
 ````
