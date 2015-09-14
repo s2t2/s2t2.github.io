@@ -5,7 +5,7 @@ permalink: /products/
 published: true
 ---
 
-Data Creative builds data products and software
+Data Creative builds open data software
  with the civic technology community.
 
 ## Data Visualizations
