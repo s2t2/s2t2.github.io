@@ -92,7 +92,7 @@ Use `heroku pg:psql` to execute custom SQL queries in a production database cons
 
 Revise `database.yml`:
 
-```` yml
+```` yaml
 production:
   url: <%= ENV['DATABASE_URL'] %>
 ````
