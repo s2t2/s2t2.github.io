@@ -26,35 +26,9 @@ cd mygem
 
 ## Describing
 
-Update the summary, description, and homepage attributes in *mygem.gemspec*.
+Update *mygem.gemspec*, specifically the summary, description, and homepage attributes.
 
-Update the "Usage" section in *README.md* to describe desired functionality.
-
-Update the "Contributing" section in *README.md* according to the following template:
-
-    ## Contributing
-
-    Browse existing issues or create a new issue to communicate bugs, desired features, etc.
-
-    After forking the repo and pushing your changes, create a pull request referencing the applicable issue(s).
-
-    ### Installation
-
-    Check out the repo with `git clone git@github.com:${YOUR_GITHUB_USERNAME}/${GEM_REPO_NAME}.git`, and `cd ${GEM_REPO_NAME}`.
-
-    After checking out the repo, run `bin/setup` to install dependencies.
-
-    ### Testing
-
-    Run `bundle exec rake` or `bundle exec rspec spec/` to run the tests.
-
-    You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-    To install this gem onto your local machine, run `bundle exec rake install`.
-
-    ### Releasing
-
-    Update the version number in `version.rb`, then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+Update *README.md* to describe desired functionality.
 
 ## Writing
 
@@ -64,26 +38,9 @@ Have fun!
 
 ## Testing
 
-The new gem generation process prompts you to choose a test suite, and will configure much of it for you. Check your configuration using the steps below as necessary.
+The gem generation process configures much of the rspec test suite for you.
 
-### Configuring Rspec
-
-Revise *mygem.gemspec* to include the following development dependencies:
-
-    spec.add_development_dependency "rspec", "~> 3.1"
-    spec.add_development_dependency "pry", "~> 0.10"
-
-Install the dependencies with `bundle install` then initialize rspec with `rspec --init`.
-
-Add these lines to the top of *spec/spec_helper.rb* to facilitate reference to your gem's classes and methods during testing:
-
-    $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-    require 'mygem'
-    require 'pry'
-
-### Writing Tests
-
-Create an rspec test (*spec/myclass_spec.rb*) using the following template:
+Create one or more rspec tests (*spec/myclass_spec.rb*) using the following template:
 
     require 'spec_helper'
 
@@ -97,8 +54,7 @@ Create an rspec test (*spec/myclass_spec.rb*) using the following template:
       end
     end
 
-
-### Running Tests
+Run tests.
 
 ```` sh
 bundle exec rspec spec/
@@ -106,57 +62,25 @@ bundle exec rspec spec/
 
 ## Debugging
 
-### Default Console
+Revise *mygem.gemspec* to include the following development dependencies:
 
-The new gem generation process provides an interactive console that auto-loads the gem library for you. Configure *bin/console* to use pry instead of IRB, then start it up.
+    spec.add_development_dependency "pry", "~> 0.10"
 
-````
-#!/usr/bin/env ruby
+To facilitate debugging inside tests, revise *spec/spec_helper.rb* to include:
 
-require "bundler/setup"
-require "mygem"
+    require 'pry'
 
-# You can add fixtures and/or initialization code here to make experimenting
-# with your gem easier. You can also use a different console, if you like.
+To use pry instead of IRB as the default console, revise *bin/console* to include:
 
-# (If you use this, don't forget to add pry to your Gemfile!)
-require "pry"
-Pry.start
+    require 'pry'
+    Pry.start
 
-# require "irb"
-# IRB.start
-````
+Start the console.
 
-```` sh
-bin/console
-````
+    bin/console
 
-### Alternative Consoles
-
-Alternatively install, load, and test the gem locally using other consoles.
-
-```` sh
-bundle exec rake install
-````
-
-#### IRB:
-
-```` sh
-irb -Ilib -rmygem # will auto-load the gem in a new IRB console
-````
-
-#### Rails:
-
-Reference local gem installation from *Gemfile*, then install the gem before starting a console.
-
-```` rb
-gem 'mygem', '~> 0.0.1', :path => "../mygem"
-````
-
-```` sh
-bundle install
-rails console
-````
+> If debugging in a rails console, revise teh rails application's *Gemfile* to include:
+ `gem 'mygem', '~> 0.0.1', :path => '../mygem'`
 
 ## Documenting
 
