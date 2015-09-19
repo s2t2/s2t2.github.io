@@ -39,7 +39,13 @@ Update *README.md* to describe desired functionality,
 
     ### Developing
 
-    After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake rspec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+    After checking out the repo, run `bin/setup` to install dependencies.
+
+    ### Testing
+
+    Run `rake rspec` or `bundle exec rspec spec/` to run the tests.
+
+    You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
     ### Releasing
 
