@@ -240,6 +240,8 @@ SELECT * FROM information_schema.tables;
 SELECT * FROM information_schema.tables WHERE table_schema = 'my_db'
 ````
 
+Finally, install [Sequel Pro](http://www.sequelpro.com/download) database management software. Specify your root database user credentials when connecting to the local database server.
+
 ## Graphing Library
 
 If using the [`rails-erd`](https://github.com/voormedia/rails-erd) gem, satisfy [`ruby-graphviz`](https://github.com/glejeune/Ruby-Graphviz) dependency by installing the [`graphviz`](http://graphviz.org/) library.
