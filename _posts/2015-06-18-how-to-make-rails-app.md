@@ -12,7 +12,7 @@ credits:
  - https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql
 ---
 
-This document describes the process of creating a new Ruby on Rails application from scratch, using Rails version 4.2.0. Replace `MY_APP` below with the name of your app and .
+This document describes the process of creating a new Ruby on Rails application from scratch, using Rails version 4.2.0. Replace `MY_APP` below with the name of your app, `MY_NAME` with your name, and `MY_EMAIL` with your email address.
 
 ## Generating
 
@@ -31,7 +31,7 @@ Create and edit **README.md**, and **LICENSE.md**. For the license, use this MIT
 ````
 The MIT License (MIT)
 
-Copyright (c) 2015 MY_NAME
+Copyright (c) 2015 MY_NAME <MY_EMAIL@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -63,7 +63,7 @@ git commit -m "adding documentation"
 ### Managing Back-end Packages
 
 Revise **Gemfile** to add ruby version, and [rubygems](https://rubygems.org/)
- like 'pry' for debugging, 'rspec-rails' for testing, and `yardoc` for documentation.
+ like 'pry' for debugging, 'rspec-rails' for testing, and 'yard' for documentation.
 
 ```` rb
 # Gemfile
@@ -142,7 +142,7 @@ bundle exec rspec spec/
 Commit the configurations.
 
 ```` sh
-git commit -m "configuring documentation and tests and database"
+git commit -m "configuring front-end packages"
 ````
 
 ### Managing Front-end Packages
@@ -211,4 +211,4 @@ That's it. Now start coding your custom app.
 
 Write [rspec tests](http://betterspecs.org/) as necessary.
 
-Write comments above public-facing methods according to the [yard](http://yardoc.org/) documentation specification.
+Write comments above public-facing methods as necessary, according to the [yard](http://yardoc.org/) documentation specification.
