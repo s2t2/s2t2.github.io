@@ -12,107 +12,103 @@ credits:
  - https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql
 ---
 
-This document describes the process of creating a new Ruby on Rails application from scratch, using Rails version 4.2.0.
+This document describes the process of creating a new Ruby on Rails application from scratch, using Rails version 4.2.0. Replace `MY_APP` below with the name of your app and .
 
 ## Generating
 
 Create a new app and set up version control.
 
 ```` sh
-bundle exec rails new MY_APP --database=DB_PROVIDER
+bundle exec rails new MY_APP --database=mysql
 cd MY_APP/
 git init .
+git add .
+git commit -m "generating new rails app"
 ````
 
-## Configuring Environment Variables
-
-Edit **/config/database.yml** using the following template:
-
-```` yaml
-default: &default
-  adapter: mysql2
-  encoding: utf8
-  pool: 5
-  username: root
-  password: <%= ENV['DB_PROVIDER_ROOT_PASSWORD'] %>
-  socket: /tmp/mysql.sock
-
-development:
-  <<: *default
-  database: MY_APP_development
-
-test:
-  <<: *default
-  database: MY_APP_test
-
-production:
-  <<: *default
-  database: MY_APP_production
-  username: MY_APP
-  password: <%= ENV['MY_APP_DATABASE_PASSWORD'] %>
+Create and edit **README.md**, and **LICENSE.md**. For the license, use this MIT template:
 
 ````
+The MIT License (MIT)
 
-Edit **config/secrets.yml** using the following template:
+Copyright (c) 2015 MY_NAME
 
-```` yaml
-development:
-  secret_key_base: <%= ENV["MY_APP_SECRET_KEY_BASE"] %>
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-test:
-  secret_key_base: <%= ENV["MY_APP_SECRET_KEY_BASE"] %>
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-production:
-  secret_key_base: <%= ENV["MY_APP_SECRET_KEY_BASE"] %>
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 ````
 
-<!--aside class="notice">
-  Is there any reason not to reuse the same environment variable for secret key base across all environments?
-</aside-->
-
-Finally, edit **/.bash_profile** (or **/.bashrc**) to ensure existence of the variables referenced above.
+Commit the documentation.
 
 ```` sh
-export DB_PROVIDER_ROOT_PASSWORD="xyz123"
-export MY_APP_DATABASE_PASSWORD="xyz123"
-export MY_APP_SECRET_KEY_BASE="xyz123"
+git commit -m "adding documentation"
 ````
-> After editing the bash profile, you may have to open a new terminal window for the changes to take effect.
 
-## Installing Back-end Dependencies
+## Configuring
 
-Revise **Gemfile** using the following template, commenting-out the [rubygems](https://rubygems.org/) you won't be using:
+### Managing Back-end Packages
+
+Revise **Gemfile** to add ruby version, and [rubygems](https://rubygems.org/)
+ like 'pry' for debugging, 'rspec-rails' for testing, and `yardoc` for documentation.
 
 ```` rb
-source 'https://rubygems.org'
-
-gem 'rails', '4.2.0'
-gem 'mysql2' # or 'pg' based on your preferred DB_PROVIDER
-# gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-# gem 'coffee-rails', '~> 4.1.0'
-# gem 'therubyracer', platforms: :ruby
-
-gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0', group: :doc
-
+# Gemfile
+# ...
+ruby "2.2.0"
+# ...
+gem 'yard', group: :doc # run `bundle exec yard doc` to parse comments and/or `bundle exec yard server` to view documentation at *localhost:8808*
+# ...
 group :development, :test do
-  # gem 'byebug'
-  gem 'web-console', '~> 2.0'
-  gem 'spring'
+  # ...
   gem 'pry'
   gem 'rspec-rails', '~> 3.0'
 end
 ````
-> The important additions are 'pry' for debugging and 'rspec-rails' for testing.
 
 Install gems via *bundler*:
 
 ```` sh
 bundle install
 ````
+
+#### Configuring Documentation
+
+```` sh
+bundle exec yard doc
+````
+
+Remove documentation from source control by adding a file at *.yardoc/.gitignore* and *doc/.gitignore* with the following contents:
+
+    # Ignore everything in this directory
+    *
+    # Except this file
+    !.gitignore
+
+#### Configuring the Database
+
+Ensure existence of the database user and password specified in **/config/database.yml**, using the command line or relational database management software as necessary.
+
+Create the development and test environment databases.
+
+```` sh
+bundle exec rake db:create
+````
+
+#### Configuring the Test Suite
 
 Finish rspec installation. Refer to [rspec installation instructions](https://github.com/rspec/rspec-rails#installation) as necessary.
 
@@ -129,6 +125,7 @@ rm -rf test/
 Configure generators in **config/application.rb**.
 
 ```` rb
+# configure generators ...
 config.generators do |g|
   g.test_framework :rspec
   g.assets = false
@@ -136,7 +133,19 @@ config.generators do |g|
 end
 ````
 
-## Installing Front-end Dependencies
+Run tests to ensure proper configuration.
+
+```` sh
+bundle exec rspec spec/
+````
+
+Commit the configurations.
+
+```` sh
+git commit -m "configuring documentation and tests and database"
+````
+
+### Managing Front-end Packages
 
 Create a file called **package.json** in the root directory, optionally generating with `npm init`:
 
@@ -154,7 +163,6 @@ Create a file called **package.json** in the root directory, optionally generati
         "postinstall": "./node_modules/bower/bin/bower install"
       }
     }
-
 
 Create a file called *bower.json* in the root directory, optionally generating with `bower init`:
 
@@ -184,61 +192,23 @@ Require components in *app/assets/javascripts/application.js*:
 
 > NOTE: place all component require statements above `//= require_tree .`
 
-Remove installed components from source control by adding a file at *vendor/assets/components/.gitignore* with the following contents:
+Remove installed node modules and bower components from source control by adding a file at *node_modules/.gitignore* and *vendor/assets/components/.gitignore* with the following contents:
 
-    [^.]*
+    # Ignore everything in this directory
+    *
+    # Except this file
+    !.gitignore
 
-## Configuring the Database
-
-Ensure existence of the database user and password specified in **/config/database.yml**, using the command line or relational database management software as necessary.
-
-```` sql
--- mysql:
-SELECT * FROM mysql.user;
-CREATE USER 'app_user'@'localhost' IDENTIFIED BY 'app user password';
-GRANT ALL ON *.* to 'my_app'@'localhost';
--- postgresql:
-SELECT * FROM pg_user;
-CREATE USER app_user WITH ENCRYPTED PASSWORD 'app user password';
-ALTER USER app_user CREATEDB;
-ALTER USER app_user WITH SUPERUSER;
-````
-
-Then create the database.
+Commit the configurations.
 
 ```` sh
-bundle exec rake db:create
-````
-
-## Documenting
-
-Create and edit **README.md**, **CREDITS.md**, and **LICENSE.md**. For the license, use this MIT template:
-
-````
-The MIT License (MIT)
-
-Copyright (c) 2015 MY_NAME
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
+git commit -m "configuring tests and database"
 ````
 
 ## Writing
 
 That's it. Now start coding your custom app.
+
+Write [rspec tests](http://betterspecs.org/) as necessary.
+
+Write comments above public-facing methods according to the [yard](http://yardoc.org/) documentation specification.
