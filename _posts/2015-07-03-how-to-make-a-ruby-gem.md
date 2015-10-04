@@ -13,6 +13,7 @@ credits:
   - http://rakeroutes.com/blog/lets-write-a-gem-part-two/
   - http://elgalu.github.io/2013/tools-for-creating-your-first-ruby-gem/
   - http://www.alexedwards.net/blog/how-to-make-a-rubygem-part-two
+  - https://gist.github.com/nesquena/1406718
 ---
 
 This document describes the process of creating and managing a [Ruby gem](https://rubygems.org/).
@@ -113,6 +114,13 @@ Write comments above public-facing methods according to the [YARD](http://yardoc
 Revise *mygem.gemspec* to include the following development dependency:
 
     spec.add_development_dependency "yard"
+    spec.add_development_dependency "redcarpet"
+    spec.add_development_dependency "github-markup"
+
+Add a *.yardopts* file to include the following configuration options:
+
+  --markup-provider=redcarpet
+  --markup=markdown
 
 After installing with `bundle install`, run `bundle exec yard doc` to parse comments and/or `bundle exec yard server` to view documentation at *localhost:8808*.
 
