@@ -2,30 +2,68 @@
 layout: page
 title: Services
 permalink: /services/
-published: true
+published: false
 ---
 
 Data Creative partners with client organizations to implement
- strategic, managerial, and operational technology solutions
- in the areas of
-  organizational intelligence,
-  data architecture and infrastructure, and
-  web application engineering.
+ strategic and technology solutions.
 
-## Organizational Intelligence
 
- + Defining organizational objectives.
- + Defining roles and responsibilities.
- + Simplifying and optimizing operational processes.
+this page is a mess....
 
-## Data Architecture and Infrastructure
 
- + Modeling logical concepts into the proper database design.
- + Adopting open software and scalable hardware.
- + Maintaining data integrity, reliability, security, and privacy.
 
-## Web Application Engineering
 
- + Automating operational processes.
- + Building APIs and web services.
- + Training in-house developer teams.
+## Strategic Consulting Services
+
+### Organizational Intelligence
+
+ + Define mission and vision
+ + Define objectives
+ + Define roles and responsibilities
+
+### Organizational Research
+
+ + Define business logic and processes
+ + Define information flows and requirements
+ + Define and observe operational processes
+
+
+
+
+
+
+
+### Organizational Operations
+
+ + Adopt open communications practices
+ + Adopt open software
+ + Adopt scalable hardware
+
+
+
+
+
+
+
+
+## Technology Consulting Services
+
+## Data Architecture
+
+ + Architect database design
+ + Architect software design
+ + Architect hardware infrastructure design
+ + Maintain data integrity and reliability
+
+## Data Engineering
+
+ + Implement database design
+ + Implement data processes, including ETL
+ + Maintain data security, privacy
+
+## Software Engineering
+
+ + Automate operational processes
+ + Build data products
+ + Train in-house developer teams

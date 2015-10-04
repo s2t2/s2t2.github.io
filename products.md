@@ -2,7 +2,7 @@
 layout: page
 title: Products
 permalink: /products/
-published: true
+published: false
 ---
 
 Data Creative builds open data software
@@ -23,5 +23,5 @@ Data Creative builds open data software
 
 ## Web Services and APIs
 
-+ [General Transit Feed Specification (GTFS)](/projects/2015/04/19/gtfs-data-client.html)
-+ [2016 Presidential Election](https://github.com/data-creative/twenty-sixteen)
++ [GTFS Data Client](/projects/2015/04/19/gtfs-data-client.html)
++ [2016 Presidential Campaign Data](https://github.com/data-creative/twenty-sixteen)

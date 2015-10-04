@@ -2,7 +2,7 @@
 layout: post
 title:  "Don't Touch the Data"
 author: MJ Rossetti
-categories: process-documentation
+categories: best-practices
 tags: none
 published: true
 icon_class: none
