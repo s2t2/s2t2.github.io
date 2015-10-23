@@ -3,10 +3,10 @@ layout: post
 title:  "US Income and Affordability"
 author: MJ Rossetti
 categories: projects
-tags: us-census housing income affordability map
+tags: us-census housing income affordability map data-visualization
 published: true
 icon_class: dollar
-technologies: mapbox.js d3.js
+technologies: html css javascript mapbox.js d3.js
 ---
 
 ![A choropleth map of the United States.](/assets/images/income-and-affordability-map.png "Income and Affordability Map")

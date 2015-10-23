@@ -3,10 +3,10 @@ layout: post
 title:  "LSAT Curve"
 author: MJ Rossetti
 categories: projects
-tags: law-school admissions-test score data
+tags: law-school admissions-test score data-visualization
 published: true
 icon_class: university
-technologies: javascript rails json d3.js
+technologies: html css javascript rails json d3.js
 ---
 
 ![A graph plotting the distribution of LSAT scores.](/assets/images/lsat-curve.png "LSAT Curve Graph")
