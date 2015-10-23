@@ -1,10 +1,10 @@
-# s2t2.github.io (s2t2.info)
+# data-creative.github.io (data-creative.info)
 
-An [open source](https://github.com/s2t2/s2t2.github.io) blog built with [jekyll](http://jekyllrb.com/).
+An [open source](https://github.com/data-creative/data-creative.github.io) blog built with [jekyll](http://jekyllrb.com/).
 
 ## Usage
 
-Visit [s2t2.github.io](http://s2t2.github.io/) in a web browser.
+Visit [http://data-creative.info/](http://data-creative.info/) in a web browser.
 
 ## Contributing
 
@@ -13,8 +13,8 @@ Visit [s2t2.github.io](http://s2t2.github.io/) in a web browser.
 Clone the repo and install dependencies.
 
 ```` sh
-git clone git@github.com:s2t2/s2t2.github.io.git
-cd s2t2.github.io
+git clone git@github.com:data-creative/data-creative.github.io.git
+cd data-creative.github.io
 bundle install
 ````
 
@@ -26,7 +26,7 @@ bundle exec jekyll serve --watch
 
 Create a new post or edit an existing post in the [posts](/_posts) directory, or implement a new feature.
 
-Then create a [pull request](https://github.com/s2t2/s2t2.github.io/pulls/).
+Then create a [pull request](https://github.com/data-creative/data-creative.github.io/pulls/).
 
 ### Production
 
