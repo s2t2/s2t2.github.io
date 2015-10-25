@@ -4,7 +4,7 @@ title:  "Learning Python"
 author: MJ Rossetti
 categories: process-documentation
 tags: python pip
-published: false
+published: true
 icon_class: snake
 technologies: python pip
 credits:  
@@ -29,9 +29,9 @@ Specify package dependencies, if necessary.
 
 Add a file called **requirements.txt** to the root directory. Write the name of each required python package dependency on a new line, save the file, and exit.
 
-    _________
-    _________
-    _____
+    numpy
+    django
+    git+https://github.com/eskerda/pybikes.git
 
 Install package dependencies, if necessary.
 
@@ -83,4 +83,24 @@ Convert `dict` to json object:
 
 ```` py
 json.dumps(my_obj)
+````
+
+## Python For Each Loops
+
+```` py
+# http://www.tutorialspoint.com/python/python_for_loop.htm
+fruits = ['banana', 'apple',  'mango']
+for fruit in fruits:
+  print 'Current fruit :', fruit
+````
+
+## Python Rescue from Exceptions
+
+```` py
+try:
+  network_name = response.meta["name"].encode()
+except UnicodeEncodeError:
+  network_name = "#UNENCODABLE"
+except UnicodeDecodeError:
+  network_name = "#UNDECODABLE"
 ````
