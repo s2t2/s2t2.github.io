@@ -19,3 +19,7 @@ US Government
 According to the data, the US Postal Service is the top emitter and operates the most vehicles by wide margins.
 
 View the tool live at http://data-creative.info/us-gov-greenhouse-gas-emissions/ or check out the source code at https://github.com/data-creative/us-gov-greenhouse-gas-emissions.
+
+Edit: this solution was one of three winners.
+
+Edit: a [write-up on hackathon and winners](https://fcw.com/articles/2015/10/19/hackathon-gsa-noble.aspx).
