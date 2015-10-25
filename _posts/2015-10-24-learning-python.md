@@ -18,12 +18,18 @@ credits:
  - https://developers.google.com/edu/python/dict-files?hl=en
 ---
 
+## Prerequisites
+
+Install python. If using homebrew on Mac OS X: `brew install python`, and follow post-installation instructions.
+
 Create a new project directory.
 
 ```` sh
 mkdir ~/Desktop/myApp
 cd ~/Desktop/myApp
 ````
+
+## Python Package Management
 
 Specify package dependencies, if necessary.
 
@@ -37,8 +43,9 @@ Install package dependencies, if necessary.
 
 ```` sh
 pip install -r requirements.txt
-python setup.py install
 ````
+
+## Executing Python Scripts
 
 Add a file called **my_script.py** to the root directory.
 
@@ -51,13 +58,17 @@ Run it.
 python my_script.py
 ````
 
-Debug it as necessary.
+## Python Debugging
+
+Debug the script as necessary.
 
 ```` py
 # https://gist.github.com/obfusk/208597ccc64bf9b436ed
 import code
 code.interact(local=locals())
 ````
+
+## Python Objects and Methods
 
 Detect classes of objects.
 
@@ -73,7 +84,7 @@ dir(my_obj)
 help(my_obj)
 ````
 
-## Python Object Types
+### Python Object Types
 
 `dict`, or dictionary, is like a hash
 
