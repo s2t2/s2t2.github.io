@@ -20,6 +20,8 @@ According to the data, the US Postal Service is the top emitter and operates the
 
 View the tool live at http://data-creative.info/us-gov-greenhouse-gas-emissions/ or check out the source code at https://github.com/data-creative/us-gov-greenhouse-gas-emissions.
 
-Edit: this solution was one of three winners.
+Edit: this solution was named one of three winners.
 
-Edit: a [write-up on hackathon and winners](https://fcw.com/articles/2015/10/19/hackathon-gsa-noble.aspx).
+Edit: this solution was mentioned in a [hackathon write-up](https://fcw.com/articles/2015/10/19/hackathon-gsa-noble.aspx), with excerpt as follows:
+
+> The last (winning) "team" was just one man, GW lecturer Mike Rossetti, who dove into the greenhouse gas problem (and, touting the importance of open development, laid his work all out on GitHub).
