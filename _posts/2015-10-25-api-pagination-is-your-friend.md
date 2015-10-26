@@ -38,7 +38,7 @@ curl https://api.my.org/v1/objects?page=2
 curl https://api.my.org/v1/objects?page=3
 ````
 
-The experienced developer leverages a scripting language like JavaScript, Ruby, Python, et. al. to loop through multiple requests in order to retrieve the entire dataset.
+The experienced developer leverages a scripting language like JavaScript, Ruby, Python, et. al. to loop through multiple requests in order to retrieve the entire dataset. Pagination strategies differ from API to API because each offers its own URL structures, URL parameters, and response structures.
 
 For example, to consume paginated data from the [Open FEC API](https://api.open.fec.gov/developers) ["candidates" endpoint](https://api.open.fec.gov/developers#!/candidate/get_candidates), the [Open FEC API ruby gem](https://github.com/data-creative/open-fec-api-ruby#usage) instructs the following usage:
 
@@ -51,7 +51,5 @@ while response.page < response.pages do # comparison of the current page number 
   response = client.candidates(options) # subsequent API call(s)
 end
 ````
-
-Consumption strategies differ from API to API because each offers its own URL structures, URL parameters, and response structures.
 
 Paginated APIs do place somewhat of a higher burden on developers, but usually not high enough to outweigh the benefits of transmitting high volumes of data. And usually the difficulty is marginal. So criticism of API Pagination is largely undeserved.
