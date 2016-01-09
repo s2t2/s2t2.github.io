@@ -18,7 +18,7 @@ Law School Admissions Test (LSAT) score distributions,
  manually converted to [JSON](https://github.com/s2t2/lsat-curve/blob/master/lsat_curve.json),
  and plotted on a graph.
 
-View the data vizualizaion live at http://s2t2.info/lsat-curve/ or check out the source code at https://github.com/s2t2/lsat-curve.
+View the data visualizaion live at http://s2t2.github.io/lsat-curve/ or check out the source code at https://github.com/s2t2/lsat-curve.
 
 <!--hr-->
 

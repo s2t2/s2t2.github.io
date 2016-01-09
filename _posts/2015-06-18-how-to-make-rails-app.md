@@ -142,7 +142,7 @@ bundle exec rspec spec/
 Commit the configurations.
 
 ```` sh
-git commit -m "configuring front-end packages"
+git commit -m "configuring tests and database"
 ````
 
 ### Managing Front-end Packages
@@ -202,7 +202,7 @@ Remove installed node modules and bower components from source control by adding
 Commit the configurations.
 
 ```` sh
-git commit -m "configuring tests and database"
+git commit -m "configuring front-end packages"
 ````
 
 ## Writing
