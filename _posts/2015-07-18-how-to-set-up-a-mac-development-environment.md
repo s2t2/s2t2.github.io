@@ -237,7 +237,7 @@ Helpful mysql commands:
 SELECT * FROM mysql.user;
 SELECT distinct table_schema FROM information_schema.tables; -- or `SHOW DATABASES;`
 SELECT * FROM information_schema.tables;
-SELECT * FROM information_schema.tables WHERE table_schema = 'my_db'
+SELECT * FROM information_schema.tables WHERE table_schema = 'my_db';
 ````
 
 Finally, install [Sequel Pro](http://www.sequelpro.com/download) database management software. Specify your root database user credentials when connecting to the local database server.
