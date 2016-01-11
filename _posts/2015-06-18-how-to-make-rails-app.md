@@ -55,7 +55,7 @@ SOFTWARE.
 Commit the documentation.
 
 ```` sh
-git commit -m "adding documentation"
+git commit -am "adding documentation"
 ````
 
 ## Configuring
@@ -102,6 +102,12 @@ Remove documentation from source control by adding a file at *.yardoc/.gitignore
 
 Ensure existence of the database user and password specified in **/config/database.yml**, using the command line or relational database management software as necessary.
 
+```` sql
+-- replace 'myuser' and 'mypassword' with your own custom values:
+CREATE USER 'myuser'@'localhost' IDENTIFIED BY 'mypassword';
+GRANT ALL ON *.* to 'myuser'@'localhost';
+````
+
 Create the development and test environment databases.
 
 ```` sh
@@ -142,7 +148,7 @@ bundle exec rspec spec/
 Commit the configurations.
 
 ```` sh
-git commit -m "configuring tests and database"
+git commit -am "configuring tests and database"
 ````
 
 ### Managing Front-end Packages
@@ -202,7 +208,7 @@ Remove installed node modules and bower components from source control by adding
 Commit the configurations.
 
 ```` sh
-git commit -m "configuring front-end packages"
+git commit -am "configuring front-end packages"
 ````
 
 ## Writing
