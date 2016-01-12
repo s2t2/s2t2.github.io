@@ -54,7 +54,7 @@ Mission Control:
      * TR: Desktop
      * BR: N/A
      * BL: N/A
-    * do not auto-arrange
+    (do not auto-arrange)
 
 Open the Mission Control application and create four new linear horizontal Spaces.
 
@@ -64,7 +64,7 @@ Turn Dock hiding on, maximize the size of the Dock, and remove all unnecessary p
 
 [Download](http://ethanschoonover.com/solarized/files/solarized.zip) the [Solarized](http://ethanschoonover.com/solarized) color themes, and unzip.
 
-In Terminal Settings import a new Profile, and choose the **solaraized/osx-terminal.app-colors-solarized/Solarized Dark ansi.terminal** theme.
+In Terminal Settings, import a new Profile, and choose the **solaraized/osx-terminal.app-colors-solarized/Solarized Dark ansi.terminal** theme.
 
 Set the Solarized Dark profile theme as default.
 
@@ -72,7 +72,7 @@ Increase font size to 18.
 
 ## Browser
 
-Install and/or open [Google Chrome](https://www.google.com/chrome/browser/desktop/index.html) and set it as the default browser.
+Install and/or open [Google Chrome](https://www.google.com/chrome/browser/desktop/index.html), and set it as the default browser.
 
 Sign-in as an existing chrome user via chrome://settings/.
 
@@ -84,7 +84,7 @@ Create a new [Apple ID](https://appleid.apple.com), and verify your email.
 
 Download Xcode. It might take 30 minutes. View progress from the Launchpad app.
 
-## Homebrew
+## Homebrew Package Manager
 
 Install the [Homebrew](http://brew.sh/) package manager.
 
@@ -104,7 +104,7 @@ Install [Homebrew Cask](http://caskroom.io/) for downloading native applications
 brew tap caskroom/cask
 ````
 
-## Text Editor
+## Atom Text Editor
 
 Install the [Atom](https://atom.io/) text editor.
 
@@ -112,13 +112,13 @@ Install the [Atom](https://atom.io/) text editor.
 brew cask install atom
 ````
 
-Install [sync-settings](https://github.com/Hackafe/atom-sync-settings), then specify your github access token and gist id to restore text editor settings. You can generate a new github access token if you've lost access to the old one.
+Install [sync-settings](https://github.com/Hackafe/atom-sync-settings).
 
 ```` sh
 apm install sync-settings
 ````
 
-Click "restore".
+In the package settings, specify your github access token and gist id. You can generate a new github access token if you've lost access to the old one. Click "restore" to restore text editor settings.
 
 ## Git
 
@@ -138,6 +138,7 @@ git config --global core.editor atom
 
 Ensure this email has been added to your GitHub profile and has been verified.
 
+
 ## SSH Keys
 
 Generate [new ssh keys](https://help.github.com/articles/generating-ssh-keys/#step-2-generate-a-new-ssh-key).
@@ -154,6 +155,32 @@ Copy the public key to GitHub and other hosts.
 pbcopy < ~/.ssh/id_rsa.pub # copy to clipboard
 ````
 
+## Dotfiles
+
+Use the [`s3_sync`](https://github.com/s2t2/s3-sync-ruby) ruby gem to recover files from s3. This requires you to obtain the configuration variables used during previous syncs.
+
+```` sh
+gem install "s3_sync"
+````
+
+```` rb
+require "s3_sync"
+
+S3Sync.configure do |config|
+  config.key_id = ENV["AWS_S3_KEY_ID"]
+  config.key_secret = ENV["AWS_S3_KEY_SECRET"]
+  config.region = ENV["AWS_S3_REGION"]
+  config.bucket = ENV["AWS_S3_BUCKET"]
+  config.secret_phrase = ENV["AWS_S3_ENCRYPTION_PHRASE"]
+  config.files = [
+    File.join(Dir.home,".bash_profile"),
+    File.join(Dir.home,".ssh","config")
+  ]
+end
+
+S3Sync.download.new
+````
+
 ## Rubygems Credentials
 
 Configure [Rubygems credentials](https://rubygems.org/profile/edit), typing your password when prompted:
@@ -166,10 +193,7 @@ curl -u my_rubygems_username https://rubygems.org/api/v1/api_key.yaml > ~/.gem/c
 
 
 
-
-
-
-
+## Languages and Frameworks
 
 ### Ruby
 
@@ -208,7 +232,7 @@ brew linkapps python
 brew install node
 ````
 
-#### Bower
+### Bower
 
 ```` sh
 cd my_app/
@@ -217,31 +241,6 @@ npm install -g bower
 # bower@1.4.1 /usr/local/lib/node_modules/bower
 ````
 
-## Configuration Files
-
-Use the [`s3_sync`](https://github.com/s2t2/s3-sync-ruby) ruby gem to recover files from s3. This requires you to obtain the configuration variables used during previous syncs.
-
-```` sh
-gem install "s3_sync"
-````
-
-```` rb
-require "s3_sync"
-
-S3Sync.configure do |config|
-  config.key_id = ENV["AWS_S3_KEY_ID"]
-  config.key_secret = ENV["AWS_S3_KEY_SECRET"]
-  config.region = ENV["AWS_S3_REGION"]
-  config.bucket = ENV["AWS_S3_BUCKET"]
-  config.secret_phrase = ENV["AWS_S3_ENCRYPTION_PHRASE"]
-  config.files = [
-    File.join(Dir.home,".bash_profile"),
-    File.join(Dir.home,".ssh","config")
-  ]
-end
-
-S3Sync.download.new
-````
 
 
 
@@ -352,6 +351,10 @@ SELECT * FROM information_schema.tables WHERE table_schema = 'my_db';
 ````
 
 Finally, install [Sequel Pro](http://www.sequelpro.com/download) database management software. Specify your root database user credentials when connecting to the local database server.
+
+
+
+
 
 ## Graphing Library
 
