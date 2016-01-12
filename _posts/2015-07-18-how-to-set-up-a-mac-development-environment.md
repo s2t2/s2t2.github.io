@@ -19,35 +19,151 @@ credits:
   - http://www.cyberciti.biz/faq/howto-add-postgresql-user-account/
   - http://dotwell.io/taking-advantage-of-bower-in-your-rails-4-app/
   - https://dev.mysql.com/doc/refman/5.0/en/set-password.html
+  - http://blog.bmannconsulting.com/mavericks-brew-cask
+  - https://github.com/nicolashery/mac-dev-setup#install
+  - https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
+  - http://blog.bmannconsulting.com/mavericks-brew-cask
+  - https://github.com/nicolashery/mac-dev-setup#install
+  - https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
+  - http://stackoverflow.com/questions/5364340/does-xcode-4-install-git
+  - http://blog.grayghostvisuals.com/git/how-to-keep-git-updated/
 ---
 
 This document describes the process of configuring a new Mac OS-X development environment from scratch.
+
+## System Users
+
+Create a new admin user. Restart your computer and login as the new user. Delete the old user and any corresponding home folders.
 
 ## System Preferences
 
 Configure hot-corners, [keyboard shortcuts](http://lifehacker.com/343328/create-a-keyboard-shortcut-for-any-menu-action-in-any-program), keystroke settings, etc.
 
-## Browser
+Keyboard:
 
-Install [chrome](https://www.google.com/chrome/browser/desktop/index.html) web browser.
+    Repeat: fastest
+    Delay until repeat: shortest
+    Shortcuts:
+      * Move left a space: option + left arrow
+      * Move right a space: option + right arrow
 
-## Text Editor
+Mission Control:
 
-Install [atom](https://atom.io/) text editor. Install [sync-settings](https://github.com/Hackafe/atom-sync-settings), specify your github access token and gist id to restore text editor settings.
+    Hot Corners:
+     * TL: Mission Control
+     * TR: Desktop
+     * BR: N/A
+     * BL: N/A
+    * do not auto-arrange
+
+Open the Mission Control application and create four new linear horizontal Spaces.
+
+Turn Dock hiding on, maximize the size of the Dock, and remove all unnecessary programs from the Dock.
 
 ## Terminal
 
-Download [solarized](http://ethanschoonover.com/solarized) terminal theme.
+[Download](http://ethanschoonover.com/solarized/files/solarized.zip) the [Solarized](http://ethanschoonover.com/solarized) color themes, and unzip.
 
-Import the *osx-solarized.app-colors-solarized/Solarized Dark ansi.terminal* theme via terminal settings.
+In Terminal Settings import a new Profile, and choose the **solaraized/osx-terminal.app-colors-solarized/Solarized Dark ansi.terminal** theme.
+
+Set the Solarized Dark profile theme as default.
+
+Increase font size to 18.
+
+## Browser
+
+Install and/or open [Google Chrome](https://www.google.com/chrome/browser/desktop/index.html) and set it as the default browser.
+
+Sign-in as an existing chrome user via chrome://settings/.
+
+Re-configure Ghostery, or any other plugins as necessary.
+
+## XCode
+
+Create a new [Apple ID](https://appleid.apple.com), and verify your email.
+
+Download Xcode. It might take 30 minutes. View progress from the Launchpad app.
 
 ## Homebrew
 
-Install [homebrew](http://brew.sh/) package manager.
+Install the [Homebrew](http://brew.sh/) package manager.
 
 ```` sh
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ````
+
+Revise your path to include Homebrew directories.
+
+```` sh
+export PATH=/usr/local/bin:$PATH
+````
+
+Install [Homebrew Cask](http://caskroom.io/) for downloading native applications.
+
+```` sh
+brew tap caskroom/cask
+````
+
+## Text Editor
+
+Install the [Atom](https://atom.io/) text editor.
+
+```` sh
+brew cask install atom
+````
+
+Install [sync-settings](https://github.com/Hackafe/atom-sync-settings), then specify your github access token and gist id to restore text editor settings. You can generate a new github access token if you've lost access to the old one.
+
+```` sh
+apm install sync-settings
+````
+
+Click "restore".
+
+## Git
+
+Install Git.
+
+```` sh
+brew install git
+````
+
+Configure [Git credentials](https://help.github.com/categories/setup/):
+
+```` sh
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+git config --global core.editor atom
+````
+
+Ensure this email has been added to your GitHub profile and has been verified.
+
+## SSH Keys
+
+Generate [new ssh keys](https://help.github.com/articles/generating-ssh-keys/#step-2-generate-a-new-ssh-key), and copy the public key to GitHub and other hosts:
+
+```` sh
+ssh-keygen -t rsa -b 4096 -C johndoe@example.com # generate new key pair
+ssh-add ~/.ssh/id_rsa # add to keychain
+pbcopy < ~/.ssh/id_rsa.pub # copy to clipboard
+````
+
+## Rubygems Credentials
+
+Configure [Rubygems credentials](https://rubygems.org/profile/edit), typing your password when prompted:
+
+```` sh
+curl -u my_rubygems_username https://rubygems.org/api/v1/api_key.yaml > ~/.gem/credentials; chmod 0600 ~/.gem/credentials
+````
+
+
+
+
+
+
+
+
+
 
 ### Ruby
 
@@ -95,7 +211,7 @@ npm install -g bower
 # bower@1.4.1 /usr/local/lib/node_modules/bower
 ````
 
-## Configuration Files and Credentials
+## Configuration Files
 
 Use the [`s3_sync`](https://github.com/s2t2/s3-sync-ruby) ruby gem to recover files from s3. This requires you to obtain the configuration variables used during previous syncs.
 
@@ -121,25 +237,14 @@ end
 S3Sync.download.new
 ````
 
-Configure [Rubygems credentials](https://rubygems.org/profile/edit), typing your password when prompted:
 
-```` sh
-curl -u $YOUR_RUBYGEMS_USERNAME https://rubygems.org/api/v1/api_key.yaml > ~/.gem/credentials; chmod 0600 ~/.gem/credentials
-````
 
-Configure [Git credentials](https://help.github.com/categories/setup/):
 
-```` sh
-git config user.name $YOUR_GITHUB_USERNAME
-git config user.email $YOUR_GITHUB_EMAIL
-````
 
-Generate [new ssh keys](https://help.github.com/articles/generating-ssh-keys/#step-2-generate-a-new-ssh-key), and copy the public key to GitHub and other hosts:
 
-```` sh
-ssh-keygen -t rsa -b 4096 -C $YOUR_SSH_EMAIL
-pbcopy < ~/.ssh/id_rsa.pub
-````
+
+
+
 
 ## Databases
 
@@ -159,16 +264,16 @@ Install.
 brew install postgresql
 ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents # to have launchd start postgresql at login
 lunchy start postgresql
-createdb # to create a database named after your root database user, which is named after your mac username; avoids `psql: FATAL:  database $USER does not exist`
+createdb # to create a database named after your root database user, which is named after your mac username; avoids `psql: FATAL:  database my_db_user does not exist`
 ````
 
 Set a password for the database root user.
 
 ````
-psql -U $USER -c "ALTER USER $USER WITH PASSWORD 'CHANGE_ME';"
+psql -U my_db_user -c "ALTER USER my_db_user WITH PASSWORD 'CHANGE_ME';"
 ````
 
-To require password authentication, find the location of the *pg_hba.conf* file using `psql -U $USER -c "SHOW hba_file;"`, and edit it to resemble to the following template:
+To require password authentication, find the location of the *pg_hba.conf* file using `psql -U my_db_user -c "SHOW hba_file;"`, and edit it to resemble to the following template:
 
     # TYPE  DATABASE        USER            ADDRESS                 METHOD
     local   all             all                                     md5
@@ -179,7 +284,7 @@ Basically you are just changing the *methods* from `trust` to `md5`. Restart the
 
 ```` sh
 lunchy restart postgresql
-psql -U $USER # you should now be prompted for a password
+psql -U my_db_user # you should now be prompted for a password
 ````
 
 Helpful psql commands and their SQL equivalents:
@@ -195,7 +300,7 @@ SELECT * FROM pg_table WHERE schema_name = 'my_db';
 -- or... `\connect my_db` and `\dt`
 ````
 
-Optionally install the pg gem/driver if you are going to be connecting with a Ruby on Rails app. Find the *pg_config* file with `psql -U $USER -c "SHOW config_file;"`, navigate to .
+Optionally install the pg gem/driver if you are going to be connecting with a Ruby on Rails app. Find the *pg_config* file with `psql -U my_db_user -c "SHOW config_file;"`.
 
 ```` sh
 gem install pg -- --with-pg-config=/usr/local/bin/pg_config
