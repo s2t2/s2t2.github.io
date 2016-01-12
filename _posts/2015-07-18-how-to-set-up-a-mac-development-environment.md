@@ -140,11 +140,17 @@ Ensure this email has been added to your GitHub profile and has been verified.
 
 ## SSH Keys
 
-Generate [new ssh keys](https://help.github.com/articles/generating-ssh-keys/#step-2-generate-a-new-ssh-key), and copy the public key to GitHub and other hosts:
+Generate [new ssh keys](https://help.github.com/articles/generating-ssh-keys/#step-2-generate-a-new-ssh-key).
 
 ```` sh
 ssh-keygen -t rsa -b 4096 -C johndoe@example.com # generate new key pair
+eval "$(ssh-agent -s)" # start the ssh-agent in the background
 ssh-add ~/.ssh/id_rsa # add to keychain
+````
+
+Copy the public key to GitHub and other hosts.
+
+```` sh
 pbcopy < ~/.ssh/id_rsa.pub # copy to clipboard
 ````
 
