@@ -40,7 +40,7 @@ In `System Preferences > Users and Groups`, create a new admin user. Restart you
 
 ### Encryption
 
-In `System Preferences > Security and Privacy > FileVault`, turn FileVault ON. Take a screenshot of the recovery code. Restart the computer when prompted.
+In `System Preferences > Security and Privacy > FileVault`, turn FileVault ON. Take a screenshot of the recovery code. Restart the computer when prompted. Monitor progress for the next 20 minutes.
 
 ### Keyboard Settings
 
@@ -195,6 +195,8 @@ S3Sync.download.new
 Configure [Rubygems credentials](https://rubygems.org/profile/edit), typing your password when prompted:
 
 ```` sh
+# replace my_rubygems_username with your own username:
+mkdir ~/.gem
 curl -u my_rubygems_username https://rubygems.org/api/v1/api_key.yaml > ~/.gem/credentials; chmod 0600 ~/.gem/credentials
 ````
 
