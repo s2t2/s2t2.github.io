@@ -27,36 +27,45 @@ credits:
   - https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
   - http://stackoverflow.com/questions/5364340/does-xcode-4-install-git
   - http://blog.grayghostvisuals.com/git/how-to-keep-git-updated/
+  - http://lifehacker.com/343328/create-a-keyboard-shortcut-for-any-menu-action-in-any-program
 ---
 
 This document describes the process of configuring a new Mac OS-X development environment from scratch.
 
 ## System Users
 
-Create a new admin user. Restart your computer and login as the new user. Delete the old user and any corresponding home folders.
+In `System Preferences > Users and Groups`, create a new admin user. Restart your computer and login as the new user. Delete the old user and any corresponding home folders.
 
 ## System Preferences
 
-Configure hot-corners, [keyboard shortcuts](http://lifehacker.com/343328/create-a-keyboard-shortcut-for-any-menu-action-in-any-program), keystroke settings, etc.
+### Encryption
 
-Keyboard:
+In `System Preferences > Security and Privacy > FileVault`, turn FileVault ON. Take a screenshot of the recovery code. Restart the computer when prompted.
 
-    Repeat: fastest
-    Delay until repeat: shortest
-    Shortcuts:
-      * Move left a space: option + left arrow
-      * Move right a space: option + right arrow
+### Keyboard Settings
 
-Mission Control:
+In `System Preferences > Keyboard`:
 
-    Hot Corners:
-     * TL: Mission Control
-     * TR: Desktop
-     * BR: N/A
-     * BL: N/A
-    (do not auto-arrange)
+  + Repeat: fastest
+  + Delay until repeat: shortest
+  + Shortcuts:
+    * Move left a space: option + left arrow
+    * Move right a space: option + right arrow
+
+### Spaces and Hot Corners
+
+In `System Preferences > Mission Control`:
+
+  + Do not auto-arrange.
+  + Hot Corners:
+    * TL: Mission Control
+    * TR: Desktop
+    * BR: N/A
+    * BL: N/A
 
 Open the Mission Control application and create four new linear horizontal Spaces.
+
+### Dock
 
 Turn Dock hiding on, maximize the size of the Dock, and remove all unnecessary programs from the Dock.
 
