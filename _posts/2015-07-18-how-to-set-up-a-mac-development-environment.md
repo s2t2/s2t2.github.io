@@ -28,6 +28,7 @@ credits:
   - http://stackoverflow.com/questions/5364340/does-xcode-4-install-git
   - http://blog.grayghostvisuals.com/git/how-to-keep-git-updated/
   - http://lifehacker.com/343328/create-a-keyboard-shortcut-for-any-menu-action-in-any-program
+  - http://postgresapp.com/documentation/gui-tools.html
 ---
 
 This document describes the process of configuring a new Mac OS-X development environment from scratch.
@@ -212,12 +213,12 @@ As a developer working on more than one ruby project, it sometimes becomes neces
 
 ```` sh
 brew install rbenv
-brew install ruby-build
 ````
 
-To use Homebrew's directories rather than ~/.rbenv add to your profile: `export RBENV_ROOT=/usr/local/var/rbenv`
+Follow any post-installation instructions:
 
-To enable shims and autocompletion add to your profile: `if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi`
+ + To use Homebrew's directories rather than ~/.rbenv add to your profile: `export RBENV_ROOT=/usr/local/var/rbenv`
+ + To enable shims and autocompletion, run `rbenv init` and follow the instructions to add to your profile: `eval "$(rbenv init -)"`
 
 Restart your terminal for the profile changes to take place.
 
@@ -319,7 +320,8 @@ SELECT * FROM pg_table WHERE schema_name = 'my_db';
 Optionally install the pg gem/driver if you are going to be connecting with a Ruby on Rails app. Find the *pg_config* file with `psql -U my_db_user -c "SHOW config_file;"`.
 
 ```` sh
-gem install pg -- --with-pg-config=/usr/local/bin/pg_config
+gem install pg
+# if there is an error and you need to specify the config file: gem install pg -- --with-pg-config=/usr/local/bin/pg_config
 ````
 
 Optionally create an application database and database user.
@@ -332,7 +334,11 @@ CREATE DATABASE app_db;
 GRANT ALL PRIVILEGES ON DATABASE app_db to app_user;
 ````
 
-Finally, install [pgAdmin](http://www.pgadmin.org/download/macosx.php) database management software. Specify your root database user credentials when connecting to the local database server.
+Finally, install [pSequel](http://www.psequel.com/) database management software. Specify your root database user credentials when connecting to the local database server.
+
+```` sh
+brew cask install psequel
+````
 
 ### MySQL
 
