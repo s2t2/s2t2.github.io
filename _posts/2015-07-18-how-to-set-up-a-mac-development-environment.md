@@ -41,6 +41,26 @@ Download [solarized](http://ethanschoonover.com/solarized) terminal theme.
 
 Import the *osx-solarized.app-colors-solarized/Solarized Dark ansi.terminal* theme via terminal settings.
 
+Restore ~/.bash_profile:
+
+```` sh
+# TERMINAL SHORTCUTS AND SETTINGS
+alias ll="ls -lahG"
+alias gs="git status"
+alias gd="git diff"
+alias gl="git log"
+alias glt="git log --graph --decorate --oneline --full-history --all --simplify-by-decoration"
+alias glsd="git ls-files --deleted"
+
+export PS1=" --->> "
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+export PATH=/usr/local/bin:$PATH # ADDED BY HOMEBREW
+export RBENV_ROOT=/usr/local/var/rbenv # ADDED BY HOMEBREW FOR RBENV
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi # ADDED FOR RBENV
+
+````
+
 ## Homebrew
 
 Install [homebrew](http://brew.sh/) package manager.
