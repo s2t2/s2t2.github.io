@@ -19,27 +19,66 @@ credits:
   - http://www.cyberciti.biz/faq/howto-add-postgresql-user-account/
   - http://dotwell.io/taking-advantage-of-bower-in-your-rails-4-app/
   - https://dev.mysql.com/doc/refman/5.0/en/set-password.html
+  - http://blog.bmannconsulting.com/mavericks-brew-cask
+  - https://github.com/nicolashery/mac-dev-setup#install
+  - https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
+  - http://blog.bmannconsulting.com/mavericks-brew-cask
+  - https://github.com/nicolashery/mac-dev-setup#install
+  - https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
+  - http://stackoverflow.com/questions/5364340/does-xcode-4-install-git
+  - http://blog.grayghostvisuals.com/git/how-to-keep-git-updated/
+  - http://lifehacker.com/343328/create-a-keyboard-shortcut-for-any-menu-action-in-any-program
+  - http://postgresapp.com/documentation/gui-tools.html
 ---
 
 This document describes the process of configuring a new Mac OS-X development environment from scratch.
 
+## System Users
+
+In `System Preferences > Users and Groups`, create a new admin user. Restart your computer and login as the new user. Delete the old user and any corresponding home folders.
+
 ## System Preferences
 
-Configure hot-corners, [keyboard shortcuts](http://lifehacker.com/343328/create-a-keyboard-shortcut-for-any-menu-action-in-any-program), keystroke settings, etc.
+### Encryption
 
-## Browser
+In `System Preferences > Security and Privacy > FileVault`, turn FileVault ON. Take a screenshot of the recovery code. Restart the computer when prompted. Monitor progress for the next 20 minutes.
 
-Install [chrome](https://www.google.com/chrome/browser/desktop/index.html) web browser.
+### Keyboard Settings
 
-## Text Editor
+In `System Preferences > Keyboard`:
 
-Install [atom](https://atom.io/) text editor. Install [sync-settings](https://github.com/Hackafe/atom-sync-settings), specify your github access token and gist id to restore text editor settings.
+  + Repeat: fastest
+  + Delay until repeat: shortest
+  + Shortcuts:
+    * Move left a space: option + left arrow
+    * Move right a space: option + right arrow
+
+### Spaces and Hot Corners
+
+In `System Preferences > Mission Control`:
+
+  + Do not auto-arrange.
+  + Hot Corners:
+    * TL: Mission Control
+    * TR: Desktop
+    * BR: N/A
+    * BL: N/A
+
+Open the Mission Control application and create four new linear horizontal Spaces.
+
+### Dock
+
+Turn Dock hiding on, maximize the size of the Dock, and remove all unnecessary programs from the Dock.
 
 ## Terminal
 
-Download [solarized](http://ethanschoonover.com/solarized) terminal theme.
+[Download](http://ethanschoonover.com/solarized/files/solarized.zip) the [Solarized](http://ethanschoonover.com/solarized) color themes, and unzip.
 
-Import the *osx-solarized.app-colors-solarized/Solarized Dark ansi.terminal* theme via terminal settings.
+In Terminal Settings, import a new Profile, and choose the **solaraized/osx-terminal.app-colors-solarized/Solarized Dark ansi.terminal** theme.
+
+Set the Solarized Dark profile theme as default.
+
+Increase font size to 18.
 
 Restore ~/.bash_profile:
 
@@ -61,61 +100,92 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi # ADDED FOR RBENV
 
 ````
 
-## Homebrew
+## Browser
 
-Install [homebrew](http://brew.sh/) package manager.
+Install and/or open [Google Chrome](https://www.google.com/chrome/browser/desktop/index.html), and set it as the default browser.
+
+Sign-in as an existing chrome user via chrome://settings/.
+
+Re-configure Ghostery, or any other plugins as necessary.
+
+## XCode
+
+Create a new [Apple ID](https://appleid.apple.com), and verify your email.
+
+Download Xcode. It might take 30 minutes. View progress from the Launchpad app.
+
+## Homebrew Package Manager
+
+Install the [Homebrew](http://brew.sh/) package manager.
 
 ```` sh
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ````
 
-### Ruby
-
-As a developer working on more than one ruby project, it sometimes becomes necessary to specify different ruby versions for each project. Rbenv makes switching ruby versions easy. Ruby-build facilitates the installation of ruby versions.
+Revise your path to include Homebrew directories.
 
 ```` sh
-brew install rbenv
-brew install ruby-build
+export PATH=/usr/local/bin:$PATH
 ````
 
-To use Homebrew's directories rather than ~/.rbenv add to your profile: `export RBENV_ROOT=/usr/local/var/rbenv`
-
-To enable shims and autocompletion add to your profile: `if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi`
-
-Restart your terminal for the profile changes to take place.
+Install [Homebrew Cask](http://caskroom.io/) for downloading native applications.
 
 ```` sh
-rbenv install 2.2.0 # to install a specific ruby version from the internet
-rbenv rehash # run this after installing a new ruby version
-rbenv global 2.2.0 # to set a specific ruby version for use
-gem install bundler
-gem install rake --version='10.4.2'
-gem install rdoc -v '4.2.0'
+brew tap caskroom/cask
 ````
 
-### Python
+## Atom Text Editor
+
+Install the [Atom](https://atom.io/) text editor.
 
 ```` sh
-brew install python
-brew linkapps python
+brew cask install atom
 ````
 
-### Node
+Install [sync-settings](https://github.com/Hackafe/atom-sync-settings).
 
 ```` sh
-brew install node
+apm install sync-settings
 ````
 
-#### Bower
+In the package settings, specify your github access token and gist id. You can generate a new github access token if you've lost access to the old one. Click "restore" to restore text editor settings.
+
+## Git
+
+Install Git.
 
 ```` sh
-cd my_app/
-npm install -g bower
-# /usr/local/bin/bower -> /usr/local/lib/node_modules/bower/bin/bower
-# bower@1.4.1 /usr/local/lib/node_modules/bower
+brew install git
 ````
 
-## Configuration Files and Credentials
+Configure [Git credentials](https://help.github.com/categories/setup/):
+
+```` sh
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+git config --global core.editor atom
+````
+
+Ensure this email has been added to your GitHub profile and has been verified.
+
+
+## SSH Keys
+
+Generate [new ssh keys](https://help.github.com/articles/generating-ssh-keys/#step-2-generate-a-new-ssh-key).
+
+```` sh
+ssh-keygen -t rsa -b 4096 -C johndoe@example.com # generate new key pair
+eval "$(ssh-agent -s)" # start the ssh-agent in the background
+ssh-add ~/.ssh/id_rsa # add to keychain
+````
+
+Copy the public key to GitHub and other hosts.
+
+```` sh
+pbcopy < ~/.ssh/id_rsa.pub # copy to clipboard
+````
+
+## Dotfiles
 
 Use the [`s3_sync`](https://github.com/s2t2/s3-sync-ruby) ruby gem to recover files from s3. This requires you to obtain the configuration variables used during previous syncs.
 
@@ -141,25 +211,77 @@ end
 S3Sync.download.new
 ````
 
+## Rubygems Credentials
+
 Configure [Rubygems credentials](https://rubygems.org/profile/edit), typing your password when prompted:
 
 ```` sh
-curl -u $YOUR_RUBYGEMS_USERNAME https://rubygems.org/api/v1/api_key.yaml > ~/.gem/credentials; chmod 0600 ~/.gem/credentials
+# replace my_rubygems_username with your own username:
+mkdir ~/.gem
+curl -u my_rubygems_username https://rubygems.org/api/v1/api_key.yaml > ~/.gem/credentials; chmod 0600 ~/.gem/credentials
 ````
 
-Configure [Git credentials](https://help.github.com/categories/setup/):
+
+
+
+
+## Languages and Frameworks
+
+### Ruby
+
+As a developer working on more than one ruby project, it sometimes becomes necessary to specify different ruby versions for each project. Rbenv makes switching ruby versions easy. Ruby-build facilitates the installation of ruby versions.
 
 ```` sh
-git config user.name $YOUR_GITHUB_USERNAME
-git config user.email $YOUR_GITHUB_EMAIL
+brew install rbenv
 ````
 
-Generate [new ssh keys](https://help.github.com/articles/generating-ssh-keys/#step-2-generate-a-new-ssh-key), and copy the public key to GitHub and other hosts:
+Follow any post-installation instructions:
+
+ + To use Homebrew's directories rather than ~/.rbenv add to your profile: `export RBENV_ROOT=/usr/local/var/rbenv`
+ + To enable shims and autocompletion, run `rbenv init` and follow the instructions to add to your profile: `eval "$(rbenv init -)"`
+
+Restart your terminal for the profile changes to take place.
 
 ```` sh
-ssh-keygen -t rsa -b 4096 -C $YOUR_SSH_EMAIL
-pbcopy < ~/.ssh/id_rsa.pub
+rbenv install 2.2.0 # to install a specific ruby version from the internet
+rbenv rehash # run this after installing a new ruby version
+rbenv global 2.2.0 # to set a specific ruby version for use
+gem install bundler
+gem install rake --version='10.4.2'
+gem install rdoc -v '4.2.0'
 ````
+
+### Python
+
+```` sh
+brew install python
+brew linkapps python
+````
+
+### Node
+
+```` sh
+brew install node
+````
+
+### Bower
+
+```` sh
+cd my_app/
+npm install -g bower
+# /usr/local/bin/bower -> /usr/local/lib/node_modules/bower/bin/bower
+# bower@1.4.1 /usr/local/lib/node_modules/bower
+````
+
+
+
+
+
+
+
+
+
+
 
 ## Databases
 
@@ -179,16 +301,16 @@ Install.
 brew install postgresql
 ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents # to have launchd start postgresql at login
 lunchy start postgresql
-createdb # to create a database named after your root database user, which is named after your mac username; avoids `psql: FATAL:  database $USER does not exist`
+createdb # to create a database named after your root database user, which is named after your mac username; avoids `psql: FATAL:  database my_db_user does not exist`
 ````
 
 Set a password for the database root user.
 
 ````
-psql -U $USER -c "ALTER USER $USER WITH PASSWORD 'CHANGE_ME';"
+psql -U my_db_user -c "ALTER USER my_db_user WITH PASSWORD 'CHANGE_ME';"
 ````
 
-To require password authentication, find the location of the *pg_hba.conf* file using `psql -U $USER -c "SHOW hba_file;"`, and edit it to resemble to the following template:
+To require password authentication, find the location of the *pg_hba.conf* file using `psql -U my_db_user -c "SHOW hba_file;"`, and edit it to resemble to the following template:
 
     # TYPE  DATABASE        USER            ADDRESS                 METHOD
     local   all             all                                     md5
@@ -199,7 +321,7 @@ Basically you are just changing the *methods* from `trust` to `md5`. Restart the
 
 ```` sh
 lunchy restart postgresql
-psql -U $USER # you should now be prompted for a password
+psql -U my_db_user # you should now be prompted for a password
 ````
 
 Helpful psql commands and their SQL equivalents:
@@ -215,10 +337,11 @@ SELECT * FROM pg_table WHERE schema_name = 'my_db';
 -- or... `\connect my_db` and `\dt`
 ````
 
-Optionally install the pg gem/driver if you are going to be connecting with a Ruby on Rails app. Find the *pg_config* file with `psql -U $USER -c "SHOW config_file;"`, navigate to .
+Optionally install the pg gem/driver if you are going to be connecting with a Ruby on Rails app. Find the *pg_config* file with `psql -U my_db_user -c "SHOW config_file;"`.
 
 ```` sh
-gem install pg -- --with-pg-config=/usr/local/bin/pg_config
+gem install pg
+# if there is an error and you need to specify the config file: gem install pg -- --with-pg-config=/usr/local/bin/pg_config
 ````
 
 Optionally create an application database and database user.
@@ -231,7 +354,11 @@ CREATE DATABASE app_db;
 GRANT ALL PRIVILEGES ON DATABASE app_db to app_user;
 ````
 
-Finally, install [pgAdmin](http://www.pgadmin.org/download/macosx.php) database management software. Specify your root database user credentials when connecting to the local database server.
+Finally, install [pSequel](http://www.psequel.com/) database management software. Specify your root database user credentials when connecting to the local database server.
+
+```` sh
+brew cask install psequel
+````
 
 ### MySQL
 
@@ -261,6 +388,13 @@ SELECT * FROM information_schema.tables WHERE table_schema = 'my_db';
 ````
 
 Finally, install [Sequel Pro](http://www.sequelpro.com/download) database management software. Specify your root database user credentials when connecting to the local database server.
+
+```` sh
+brew cask install sequel-pro
+````
+
+
+
 
 ## Graphing Library
 
