@@ -80,6 +80,26 @@ Set the Solarized Dark profile theme as default.
 
 Increase font size to 18.
 
+Restore ~/.bash_profile:
+
+```` sh
+# TERMINAL SHORTCUTS AND SETTINGS
+alias ll="ls -lahG"
+alias gs="git status"
+alias gd="git diff"
+alias gl="git log"
+alias glt="git log --graph --decorate --oneline --full-history --all --simplify-by-decoration"
+alias glsd="git ls-files --deleted"
+
+export PS1=" --->> "
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+export PATH=/usr/local/bin:$PATH # ADDED BY HOMEBREW
+export RBENV_ROOT=/usr/local/var/rbenv # ADDED BY HOMEBREW FOR RBENV
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi # ADDED FOR RBENV
+
+````
+
 ## Browser
 
 Install and/or open [Google Chrome](https://www.google.com/chrome/browser/desktop/index.html), and set it as the default browser.
