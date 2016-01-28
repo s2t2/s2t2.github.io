@@ -75,6 +75,8 @@ heroku addons
 
 Follow the PostgreSQL or MySQL instructions, depending on your database choice.
 
+For further instructions, see [Working with Databases on Heroku](http://data-creative.info/process-documentation/2015/08/17/databases-on-heroku.html).
+
 #### PostgreSQL
 
 ```` sh

@@ -85,7 +85,28 @@ CA Cert | choose the `cleardb-ca.pem` file
 
 #### Windows OS
 
-Download todo.
+*EDIT ME!*
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+
 
 ## PostgreSQL
 
@@ -97,13 +118,17 @@ heroku addons:create heroku-postgresql:hobby-dev
 
 ### Connect to Database
 
+Obtain database credentials via the command line (`heroku pg:credentials DATABASE -a appname`) or the Heroku application management console - specifically the Heroku config variable called `DATABASE_URL`, which will resemble `postgres://user_name:password@host_name:5432/database_name`.
+
 #### Mac OS
 
-Download todo.
+Download, install, and open [PSequel](http://www.psequel.com/).
+
+Click "Add Connection" then enter the credentials and click "Use SSL". Finally, click "Connect".
 
 #### Windows OS
 
-Download todo.
+*EDIT ME!*
 
 ### Grant permissions to new database users
 
