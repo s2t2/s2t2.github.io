@@ -354,7 +354,7 @@ CREATE DATABASE app_db;
 GRANT ALL PRIVILEGES ON DATABASE app_db to app_user;
 ````
 
-Finally, install [pSequel](http://www.psequel.com/) database management software. Specify your root database user credentials when connecting to the local database server.
+Finally, install [pgAdmin](http://www.pgadmin.org/download/macosx.php) or [pSequel](http://www.psequel.com/) database management software. Specify your root database user credentials when connecting to the local database server.
 
 ```` sh
 brew cask install psequel

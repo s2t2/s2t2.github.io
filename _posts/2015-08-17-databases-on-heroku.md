@@ -122,9 +122,9 @@ Obtain database credentials via the command line (`heroku pg:credentials DATABAS
 
 #### Mac OS
 
-Download, install, and open [PSequel](http://www.psequel.com/).
+Download, install, and open [pgAdmin](http://www.pgadmin.org/download/macosx.php) or [PSequel](http://www.psequel.com/).
 
-Click "Add Connection" then enter the credentials and click "Use SSL". Finally, click "Connect".
+To connect with PSequel: click "Add Connection" then enter the credentials and click "Use SSL"; finally, click "Connect".
 
 #### Windows OS
 
