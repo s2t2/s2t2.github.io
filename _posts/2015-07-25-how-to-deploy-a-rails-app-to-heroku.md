@@ -176,5 +176,7 @@ heroku logs -t # for tail
 heroku logs -n 1500
 heroku run bash
 heroku run console
-heroku pg:backups capture --app my-app
+heroku pg:backups capture
+heroku ps  # get the process number, then stop with ...
+heroku ps:stop scheduler.6531
 ````
