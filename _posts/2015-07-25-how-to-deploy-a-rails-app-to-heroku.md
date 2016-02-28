@@ -18,6 +18,8 @@ credits:
  - https://github.com/heroku/heroku-buildpack-nodejs
  - https://github.com/heroku/heroku-buildpack-ruby
  - http://www.nateberkopec.com/2015/07/29/scaling-ruby-apps-to-1000-rpm.html
+ - https://devcenter.heroku.com/articles/upgrading-heroku-postgres-databases#upgrade-with-pg-copy-default
+ - https://devcenter.heroku.com/articles/heroku-postgres-plans#plan-tiers
 ---
 
 This document describes the process of deploying a Ruby on Rails application to a production server hosted by Heroku.
@@ -167,6 +169,24 @@ heroku config:get SENDGRID_USERNAME
 heroku config:get SENDGRID_PASSWORD
 ````
 
+Add to config/environments/production.rb:
+
+````rb
+config.action_mailer.default_url_options = { host: 'my-app-name.herokuapp.com' }
+
+# Send mail through sendgrid smtp on production.
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+  :address        => 'smtp.sendgrid.net',
+  :port           => '587',
+  :authentication => :plain,
+  :user_name      => ENV['SENDGRID_USERNAME'],
+  :password       => ENV['SENDGRID_PASSWORD'],
+  :domain         => 'heroku.com',
+  :enable_starttls_auto => true
+}
+````
+
 ## Debugging
 
 ````sh
@@ -180,3 +200,32 @@ heroku pg:backups capture
 heroku ps  # get the process number, then stop with ...
 heroku ps:stop scheduler.6531
 ````
+
+## Maintenance
+
+### Database Upgrades
+
+```` sh
+heroku addons:create heroku-postgresql:hobby-basic # or... heroku addons:create heroku-postgresql:standard-0
+heroku pg:wait # only if upgrading to standard tier or higher
+heroku maintenance:on
+heroku ps:scale worker=0
+heroku pg:copy DATABASE_URL HEROKU_POSTGRESQL_CHARCOAL_URL # where HEROKU_POSTGRESQL_CHARCOAL_URL is the name of the new database
+````
+
+### Database Backups
+
+Initiate a new PG Backup from the Heroku Postgres console and click "Download" when it's ready.
+
+Restore production database on local machine.
+
+```` sh
+psql
+DROP DATABASE IF EXISTS my_app_snapshot;
+CREATE DATABASE my_app_snapshot;
+\q
+
+pg_restore --verbose --clean --no-acl --no-owner -h localhost -U my_db_user -d my_app_snapshot latest.dump
+````
+
+Back-up and store the database.
