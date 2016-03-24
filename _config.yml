@@ -2,16 +2,17 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://yoursite.com
-title: Your Awesome Site
-email: your-email@domain.com
-author: Your Name
-description: > # "Write an awesome description for your new site here. 
-  You can edit this line in _config.yml. It will appear in your document 
-  head meta (for Google search results) and in your feed.xml site 
-  description.
-copyright: 'Copyright &copy; 2015 Your Name. All Rights Reserved.'
-credits: 'Credits: Landing Page is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com/">Start Bootstrap</a>.'
+url: https://data-creative.info/
+title: Data Creative
+email: datacreativellc@gmail.com
+author: MJ Rossetti
+description: Data Creative specializes in data strategy, architecture, and engineering.
+copyright: Copyright &copy; 2016 Data Creative, LLC.
+credits: > Credits:
+  <a href="https://pages.github.com/">GitHub Pages</a>,
+  <a href="https://jekyllrb.com/">Jekyll</a>,
+  <a href="https://github.com/swcool/landing-page-theme">Landing Page Theme</a>,
+  <a href="http://barrymieny.deviantart.com/art/Layered-Database-Source-Documents-348798124">Database Icon</a>
 
 # ----------------------- #
 #    Jekyll & Plugins     #
@@ -27,8 +28,13 @@ permalink: pretty
 
 social:
   - title: twitter
-    url: https://twitter.com/SBootstrap
+    fa-icon-class: twitter
+    url: https://twitter.com/data_creative
   - title: github
-    url: https://github.com/IronSummitMedia/startbootstrap
-  - title: linkedin
-    url: 
+    fa-icon-class: github
+    url: https://github.com/data-creative/
+  #- title: linkedin
+  #  url:
+  - title: email
+    fa-icon-class: envelope
+    url: mailto:datacreativellc@gmail.com
