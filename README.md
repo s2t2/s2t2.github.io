@@ -11,8 +11,8 @@ Edits and suggestions welcome.
 Clone the repo and install dependencies.
 
 ```` sh
-git clone git@github.com:data-creative/data-creative.info.git
-cd data-creative.info
+git clone git@github.com:data-creative/data-creative.github.io.git
+cd data-creative.github.io
 bundle install
 ````
 
