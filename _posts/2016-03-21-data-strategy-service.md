@@ -1,6 +1,6 @@
 ---
 layout: default
-img: marketing-positioning-70969707.jpg
+img: to-be-menu-update-process-diagram.png
 category: Services
 title: Data Strategy
 description: |
