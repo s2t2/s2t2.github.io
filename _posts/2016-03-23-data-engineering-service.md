@@ -1,7 +1,7 @@
 ---
 layout: default
 img: api-controller.png
-category: Services
+category: services
 title: Data Engineering
 description: |
 ---
