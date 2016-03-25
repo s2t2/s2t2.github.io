@@ -1,35 +1,39 @@
-# Landing Page Jekyll theme
+# data-creative.info
 
-Jekyll theme based on [landing-page bootstrap theme ](http://startbootstrap.com/templates/landing-page/)
+A business website and blog.
 
-## How to use
- - Place a image in `/img/services/`
- - Create posts to display your services. Use the follow as an example:
+## Contributing
 
-```txt
----
-layout: default
-img: ipad.png
-category: Services
-title: The service title
----
-The description of this service
-```
+Edits and suggestions welcome.
 
-## Demo
-View this jekyll theme in action [here](https://swcool.github.io/landing-page-theme)
+### Installation
 
-## Screenshot
-![screenshot](https://raw.githubusercontent.com/swcool/landing-page-theme/master/img/screenshot.png)
+Clone the repo and install dependencies.
 
-===
+```` sh
+git clone git@github.com:data-creative/data-creative.info.git
+cd data-creative.info
+bundle install
+````
 
-For more Jekyll details, read [documentation](http://jekyllrb.com/).
-This Jekyll theme used [Freelancer Jekyll theme](https://github.com/jeromelachaud/freelancer-theme/) as reference.
+Start local web server and view site at localhost:4000.
+
+```` sh
+bundle exec jekyll serve --watch
+````
+
+Edit an existing post in the [posts](/_posts) directory, create a new post, or implement a new feature. Then create a [pull request](https://github.com/data-creative/data-creative.github.io/pulls/).
+
+### Production
+
+This site is hosted by [github pages](https://pages.github.com/). To update, push commits to master or merge another branch into master.
+
+```` sh
+git push origin master
+````
 
 ## License
-The contents of this repository are licensed under the [Apache
-2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
 
-## Version
-1.0.1
+Content: [Creative Commons, BY-SA](http://creativecommons.org/licenses/by-sa/4.0/)
+
+Code: [MIT](http://opensource.org/licenses/mit-license.php)
