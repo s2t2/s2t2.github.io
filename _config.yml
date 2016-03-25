@@ -8,6 +8,8 @@ email: datacreativellc@gmail.com
 author: MJ Rossetti
 description: Data Creative specializes in data strategy, architecture, and engineering.
 copyright: Copyright &copy; 2016 Data Creative, LLC.
+repository: https://github.com/data-creative/data-creative.info/
+#baseurl: /data-creative.info/
 credits: >
   Credits:
   <a href="https://pages.github.com/">GitHub Pages</a>,
