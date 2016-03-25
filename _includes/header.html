@@ -2,11 +2,14 @@
 
   <div class="wrapper">
 
-
-    <a class="site-title" href="{{ site.baseurl }}/">
+    {% comment %}
+    <!--a class="site-title" href="{{ site.baseurl }}/">
       <img src="/assets/images/android-icon-48x48.png" alt="a multi-colored database" style="margin-bottom:5px;"/>
       {{ site.title }}
-    </a>
+    </a-->
+    {% endcomment %}
+
+    <a class="site-title" href="http://data-creative.info/">{{ site.title }}</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -17,12 +20,18 @@
         </svg>
       </a>
 
-      <div class="trigger">
+      <!--div class="trigger">
+        {% comment %}
         {% for page in site.pages %}
           {% if page.title %}
           <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
           {% endif %}
         {% endfor %}
+        {% endcomment %}
+        <a class="page-link" href="/">Blog</a>
+      </div-->
+
+      <div class="trigger">
         <a class="page-link" href="/">Blog</a>
       </div>
     </nav>
