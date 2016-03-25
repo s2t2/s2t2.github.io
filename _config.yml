@@ -8,7 +8,8 @@ email: datacreativellc@gmail.com
 author: MJ Rossetti
 description: Data Creative specializes in data strategy, architecture, and engineering.
 copyright: Copyright &copy; 2016 Data Creative, LLC.
-credits: > Credits:
+credits: >
+  Credits:
   <a href="https://pages.github.com/">GitHub Pages</a>,
   <a href="https://jekyllrb.com/">Jekyll</a>,
   <a href="https://github.com/swcool/landing-page-theme">Landing Page Theme</a>,
@@ -27,6 +28,9 @@ permalink: pretty
 # ----------------------- #
 
 social:
+  - title: email
+    fa-icon-class: envelope
+    url: mailto:datacreativellc@gmail.com
   - title: twitter
     fa-icon-class: twitter
     url: https://twitter.com/data_creative
@@ -35,6 +39,3 @@ social:
     url: https://github.com/data-creative/
   #- title: linkedin
   #  url:
-  - title: email
-    fa-icon-class: envelope
-    url: mailto:datacreativellc@gmail.com
