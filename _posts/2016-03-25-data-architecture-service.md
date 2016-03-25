@@ -1,9 +1,13 @@
 ---
 layout: default
-img: dog.png
+img: blog-erd-transparent.png
 category: Services
 title: Data Architecture
 description: |
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget eleifend quam, pharetra vulputate lorem. Phasellus vitae ultrices neque, a rhoncus mi. Aliquam fringilla elit a bibendum mollis. Nulla eu posuere lacus. Donec sagittis sodales dui, nec placerat neque tempor ut. Vivamus lectus tellus, placerat vel quam vitae, viverra interdum lorem. Nunc fermentum ut nulla viverra dictum. Phasellus in luctus nisl, sed ullamcorper nibh. Nam faucibus ex vitae quam egestas pellentesque. Sed accumsan, lectus porttitor posuere feugiat, mauris urna semper ligula, vel pharetra ligula ex ut purus. Suspendisse dictum porttitor felis, nec ornare elit congue non.
+Do you need a new database? Is your existing database in desperate need of a make-over?
+
+We specialize in modeling real-world concepts into database designs that are built to last.
+
+With experience designing everything from simple relational databases to complex data warehouses, we can provide you with the technical specifications you need to move forward with development.
