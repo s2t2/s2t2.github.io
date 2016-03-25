@@ -1,0 +1,43 @@
+# ----------------------- #
+#      Main Configs       #
+# ----------------------- #
+
+url: https://data-creative.info/
+title: Data Creative
+email: datacreativellc@gmail.com
+author: MJ Rossetti
+description: Data Creative specializes in data strategy, architecture, and engineering.
+copyright: Copyright &copy; 2016 Data Creative, LLC.
+repository: https://github.com/data-creative/data-creative.info/
+#baseurl: /data-creative.info/
+credits: >
+  Credits:
+  <a href="https://pages.github.com/">GitHub Pages</a>,
+  <a href="https://jekyllrb.com/">Jekyll</a>,
+  <a href="https://github.com/swcool/landing-page-theme">Landing Page Theme</a>,
+  <a href="http://barrymieny.deviantart.com/art/Layered-Database-Source-Documents-348798124">Database Icon</a>
+
+# ----------------------- #
+#    Jekyll & Plugins     #
+# ----------------------- #
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# ----------------------- #
+#   3rd Party Settings    #
+# ----------------------- #
+
+social:
+  - title: email
+    fa-icon-class: envelope
+    url: mailto:datacreativellc@gmail.com
+  - title: twitter
+    fa-icon-class: twitter
+    url: https://twitter.com/data_creative
+  - title: github
+    fa-icon-class: github
+    url: https://github.com/data-creative/
+  #- title: linkedin
+  #  url:
