@@ -13,4 +13,4 @@ technologies: ruby rubygems bundler rake json httparty citybikes-api
 A ruby interface to the [CityBikes API](http://api.citybik.es/v2/) (v2).
  Includes endpoints for bike-share network and station data.
 
-Check out the source code at https://github.com/data-creative/citybikes-api-ruby.
+Check out the source code at [https://github.com/data-creative/citybikes-api-ruby](https://github.com/data-creative/citybikes-api-ruby).

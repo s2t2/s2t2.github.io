@@ -11,7 +11,9 @@ icon_class: university
 technologies: html css javascript rails json d3.js
 ---
 
+<!--
 ![A graph plotting the distribution of LSAT scores.](/assets/images/lsat-curve.png "LSAT Curve Graph")
+-->
 
 Law School Admissions Test (LSAT) score distributions,
  based on a
@@ -20,7 +22,7 @@ Law School Admissions Test (LSAT) score distributions,
  manually converted to [JSON](https://github.com/s2t2/lsat-curve/blob/master/lsat_curve.json),
  and plotted on a graph.
 
-View the data visualizaion live at http://s2t2.github.io/lsat-curve/ or check out the source code at https://github.com/s2t2/lsat-curve.
+View the data visualization live at [http://s2t2.github.io/lsat-curve/](http://s2t2.github.io/lsat-curve/) or check out the source code at [https://github.com/s2t2/lsat-curve](https://github.com/s2t2/lsat-curve).
 
 <!--hr-->
 

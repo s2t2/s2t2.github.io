@@ -13,7 +13,9 @@ credits:
  - https://www.archaeological.org/pdfs/AIATourismGuidelines.pdf
 ---
 
+<!--
 ![a photo of one crime scene investigator putting on white gloves while the other takes pictures](http://www.itsgov.com/wp-content/uploads/2014/01/The-Science-Of-Crime-Scene-Forensics-A-Detailed-Overview.jpg)
+-->
 
 Data Extraction, Transformation, and Loading (ETL) requires strict adherence to repeatable scientific processes.
 

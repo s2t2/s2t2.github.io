@@ -12,4 +12,4 @@ technologies: ruby rspec json rubygems bundler google-apis
 
 A ruby interface to the [YouTube Data API](https://developers.google.com/youtube/v3/docs/).
 
-Check out the source code at https://github.com/data-creative/youtube-data-api-ruby.
+Check out the source code at [https://github.com/data-creative/youtube-data-api-ruby](https://github.com/data-creative/youtube-data-api-ruby).

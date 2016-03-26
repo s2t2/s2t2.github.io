@@ -13,4 +13,4 @@ technologies: google-drive csv ruby rubygems bundler rake
 A ruby library
  for extracting spreadsheet data from [Google Drive](https://www.google.com/drive/).
 
-Check out the source code at https://github.com/data-creative/google-sheet-reader-ruby.
+Check out the source code at [https://github.com/data-creative/google-sheet-reader-ruby](https://github.com/data-creative/google-sheet-reader-ruby).

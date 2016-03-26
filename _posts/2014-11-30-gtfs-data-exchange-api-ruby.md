@@ -12,4 +12,4 @@ technologies: ruby rspec json rubygems bundler
 
 A ruby wrapper for the [GTFS Data Exchange API](http://www.gtfs-data-exchange.com/api).
 
-Check out the source code at https://github.com/data-creative/gtfs-data-exchange-api-ruby.
+Check out the source code at [https://github.com/data-creative/gtfs-data-exchange-api-ruby](https://github.com/data-creative/gtfs-data-exchange-api-ruby).

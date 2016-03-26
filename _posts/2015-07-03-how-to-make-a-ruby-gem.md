@@ -105,7 +105,7 @@ Start the console.
 
     bin/console
 
-> If debugging in a rails console, revise teh rails application's *Gemfile* to include:
+> If debugging in a rails console, revise the rails application's *Gemfile* to include:
  `gem 'mygem', '~> 0.0.1', :path => '../mygem'`
 
 ## Documenting
@@ -120,8 +120,8 @@ Revise *mygem.gemspec* to include the following development dependency:
 
 Add a *.yardopts* file to include the following configuration options:
 
-  --markup-provider=redcarpet
-  --markup=markdown
+    --markup-provider=redcarpet
+    --markup=markdown
 
 After installing with `bundle install`, run `bundle exec yard doc` to parse comments and/or `bundle exec yard server` to view documentation at *localhost:8808*.
 

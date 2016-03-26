@@ -11,7 +11,9 @@ icon_class: dollar
 technologies: html css javascript mapbox.js d3.js
 ---
 
+<!--
 ![A choropleth map of the United States.](/assets/images/income-and-affordability-map.png "Income and Affordability Map")
+-->
 
 Income and [affordability](http://en.wiktionary.org/wiki/affordability)
  [data](https://gist.github.com/s2t2/cd45dfd8007fcf83fef7#affordability-data)
@@ -19,4 +21,4 @@ Income and [affordability](http://en.wiktionary.org/wiki/affordability)
  plotted on a map using [shapes](https://www.census.gov/geo/maps-data/data/cbf/cbf_msa.html)
  from the US Census Bureau.
 
-View the map live at http://bl.ocks.org/s2t2/raw/cd45dfd8007fcf83fef7/ or check out the source code at https://gist.github.com/s2t2/cd45dfd8007fcf83fef7.
+View the map live at [http://bl.ocks.org/s2t2/raw/cd45dfd8007fcf83fef7/](http://bl.ocks.org/s2t2/raw/cd45dfd8007fcf83fef7/) or check out the source code at [https://gist.github.com/s2t2/cd45dfd8007fcf83fef7](https://gist.github.com/s2t2/cd45dfd8007fcf83fef7).

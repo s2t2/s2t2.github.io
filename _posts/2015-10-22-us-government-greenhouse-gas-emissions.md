@@ -11,7 +11,9 @@ icon_class: tree
 technologies: html css javascript d3.js
 ---
 
+<!--
 ![A bar chart depicting the US Postal Service as having the highest greenhouse gas emissions out of all federal agencies.](/assets/images/us-government-greenhouse-gas-emissions-by-agency.png "US Government Greenhouse Gas Emissions by Agency")
+-->
 
 US Government
  [vehicle emissions data](https://github.com/data-creative/us-gov-greenhouse-gas-emissions/tree/master/data)
@@ -20,7 +22,8 @@ US Government
 
 According to the data, the US Postal Service is the top emitter and operates the most vehicles by wide margins.
 
-View the tool live at http://data-creative.info/us-gov-greenhouse-gas-emissions/ or check out the source code at https://github.com/data-creative/us-gov-greenhouse-gas-emissions.
+View the tool live at [http://data-creative.info/us-gov-greenhouse-gas-emissions/](http://data-creative.info/us-gov-greenhouse-gas-emissions/)
+ or check out the source code at [https://github.com/data-creative/us-gov-greenhouse-gas-emissions](https://github.com/data-creative/us-gov-greenhouse-gas-emissions).
 
 Edit: this solution was named one of three winners.
 
