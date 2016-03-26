@@ -4,6 +4,7 @@ title:  "US Income and Affordability"
 author: MJ Rossetti
 categories: posts
 img: income-and-affordability-map.png
+use_img_as_post_header: true
 tags: us-census housing income affordability map data-visualization
 published: true
 icon_class: dollar

@@ -4,6 +4,7 @@ title:  "Don't Touch the Data"
 author: MJ Rossetti
 categories: posts
 img: scene-of-crime.jpg
+use_img_as_post_header: true
 tags: none
 published: true
 icon_class: none

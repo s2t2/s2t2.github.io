@@ -4,6 +4,7 @@ title:  "How to set up a Mac OS-X development environment"
 author: MJ Rossetti
 categories: posts
 img: macbook-air-side.png
+use_img_as_post_header: true
 tags: none
 published: true
 icon_class: none

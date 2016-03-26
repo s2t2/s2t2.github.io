@@ -4,6 +4,7 @@ title:  "API Pagination is your friend"
 author: MJ Rossetti
 categories: posts
 img: flipping-through-pages.jpg
+use_img_as_post_header: true
 tags: none
 published: true
 icon_class: none

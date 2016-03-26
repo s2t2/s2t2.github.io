@@ -4,6 +4,7 @@ title:  "LSAT Curve"
 author: MJ Rossetti
 categories: posts
 img: lsat-curve.png
+use_img_as_post_header: true
 tags: law-school admissions-test score data-visualization
 published: true
 icon_class: university
