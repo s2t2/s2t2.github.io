@@ -1,8 +1,9 @@
 ---
 layout: post
-title:  "Youtube Data API"
+title:  "Youtube Data API - Ruby Library"
 author: MJ Rossetti
-categories: projects
+categories: posts
+img: rubygems_logo_red.png
 tags: youtube google api
 published: true
 icon_class: book

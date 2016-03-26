@@ -2,7 +2,8 @@
 layout: post
 title:  "API Pagination is your friend"
 author: MJ Rossetti
-categories: best-practices
+categories: posts
+img: flipping-through-pages.jpg
 tags: none
 published: true
 icon_class: none

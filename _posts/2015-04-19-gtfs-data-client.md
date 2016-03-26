@@ -1,8 +1,9 @@
 ---
 layout: post
-title:  "GTFS Data Client"
+title:  "GTFS Data Client - Ruby Library"
 author: MJ Rossetti
-categories: projects
+categories: posts
+img: rubygems_logo_red.png
 tags: gtfs open-transit-data gtfs-data-exchange google-transit-data-feed
 published: true
 icon_class: train

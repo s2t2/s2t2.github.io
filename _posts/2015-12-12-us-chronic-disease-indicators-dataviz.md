@@ -2,7 +2,8 @@
 layout: post
 title:  "US Chronic Disease Indicators"
 author: MJ Rossetti
-categories: projects
+categories: posts
+img: us-chronic-disease-indicators.png
 tags: ostp mental health hackathon data-visualization
 published: true
 icon_class: frown-o

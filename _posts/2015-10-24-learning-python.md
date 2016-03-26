@@ -2,7 +2,8 @@
 layout: post
 title:  "Learning Python"
 author: MJ Rossetti
-categories: process-documentation
+categories: posts
+img: python-logo.png
 tags: python pip
 published: true
 icon_class: snake

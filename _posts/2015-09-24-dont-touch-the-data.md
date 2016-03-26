@@ -2,7 +2,8 @@
 layout: post
 title:  "Don't Touch the Data"
 author: MJ Rossetti
-categories: best-practices
+categories: posts
+img: scene-of-crime.jpg
 tags: none
 published: true
 icon_class: none

@@ -1,8 +1,9 @@
 ---
 layout: post
-title:  "Google Sheet Reader"
+title:  "Google Sheet Reader - Ruby Library"
 author: MJ Rossetti
-categories: projects
+categories: posts
+img: rubygems_logo_red.png
 tags: none
 published: true
 icon_class: none

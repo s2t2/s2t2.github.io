@@ -1,8 +1,9 @@
 ---
 layout: post
-title:  "CityBikes API for Ruby"
+title:  "CityBikes API - Ruby Library"
 author: MJ Rossetti
-categories: projects
+categories: posts
+img: rubygems_logo_red.png
 tags: citybikes api
 published: true
 icon_class: none

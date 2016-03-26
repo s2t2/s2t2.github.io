@@ -3,6 +3,7 @@ layout: post
 title:  "Metro North Railroad Stations"
 author: MJ Rossetti
 categories: posts
+img: metro-north-station-map.png
 tags: metro-north-railroad gtfs open-transit-data map data-visualization
 published: true
 icon_class: train

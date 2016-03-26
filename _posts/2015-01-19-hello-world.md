@@ -2,7 +2,8 @@
 layout: post
 title:  "Hello World"
 author: MJ Rossetti
-categories: test-driven-blogging
+categories: test-driven-blogging posts
+img: dog.png
 tags: testing blogging posts
 published: false
 icon_class: rebel

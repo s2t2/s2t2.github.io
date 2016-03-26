@@ -2,7 +2,8 @@
 layout: post
 title:  "How to set up a Mac OS-X development environment"
 author: MJ Rossetti
-categories: process-documentation
+categories: posts
+img: macbook-air-side.png
 tags: none
 published: true
 icon_class: none
