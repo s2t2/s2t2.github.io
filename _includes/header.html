@@ -9,25 +9,28 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="#home">{{ site.title }}</a>
+            <a class="navbar-brand page-scroll" href="{% if page.url == '/' %}{{ '#home' }}{% else %}{{ '/' }}{% endif %}">
+              {{ site.title }}
+            </a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- The page-scroll links don't observe animation if their href value contains a "/", so for page-scroll links on the homepage, use only anchor tags ("#my_anchor") -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
             	<li>
-                    <a class="page-scroll" href="#about">About</a>
+                  <a class="page-scroll" href="{% if page.url == '/' %}{{ '#about' }}{% else %}{{ '/#about' }}{% endif %}">About</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#services">Services</a>
+                  <a class="page-scroll" href="{% if page.url == '/' %}{{ '#services' }}{% else %}{{ '/#services' }}{% endif %}">Services</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#contact">Contact</a>
+                  <a class="page-scroll" href="{% if page.url == '/' %}{{ '#contact' }}{% else %}{{ '/#contact' }}{% endif %}">Contact</a>
                 </li>
                 <li>
-                    <a href="/blog">
-                      Blog
-                      <!--span>&nbsp;<i class="fa fa-external-link"></i></span-->
-                    </a>
+                  <a href="/blog">
+                    Blog
+                    <!--span>&nbsp;<i class="fa fa-external-link"></i></span-->
+                  </a>
                 </li>
             </ul>
         </div>
