@@ -2,7 +2,7 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: https://data-creative.info/
+url: http://data-creative.github.io/
 title: Data Creative
 email: datacreativellc@gmail.com
 author: MJ Rossetti
@@ -10,7 +10,7 @@ description: Data Creative specializes in data strategy, architecture, and engin
 copyright: Copyright &copy; 2016 Data Creative, LLC.
 repository: https://github.com/data-creative/data-creative.info/
 #url: "http://data-creative.info"
-#baseurl: /data-creative.info/
+baseurl: ""
 credits: >
   Credits:
   <a href="https://pages.github.com/">GitHub Pages</a>,
@@ -42,3 +42,6 @@ social:
     url: https://github.com/data-creative/
   #- title: linkedin
   #  url:
+
+google_analytics_tracker_id: 'UA-61038121-1'
+disqus_shortname: 's2t2info'

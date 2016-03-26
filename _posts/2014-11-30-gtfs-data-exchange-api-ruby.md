@@ -2,7 +2,7 @@
 layout: post
 title:  "GTFS Data Exchange API"
 author: MJ Rossetti
-categories: projects
+categories: posts
 tags: gtfs open-transit-data gtfs-data-exchange
 published: true
 icon_class: book
