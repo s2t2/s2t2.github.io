@@ -444,6 +444,8 @@ Helpful mongo shell commands:
 db # to show the active database
 show dbs # to show all databases (this doesn't work?)
 use myNewDatabase # create/use a new database
+show collections # list all collections in the current database (alternate)
+db.getCollectionNames() # list all collections in the current database
 db.myCollection.insert( { x: 1 } ); # insert a new record
 db.myCollection.insert( { y: 2 } );
 db.myCollection.find().pretty() # print collection
