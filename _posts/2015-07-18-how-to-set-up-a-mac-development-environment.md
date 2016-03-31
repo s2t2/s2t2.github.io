@@ -116,7 +116,7 @@ Re-configure Ghostery, or any other plugins as necessary.
 
 Create a new [Apple ID](https://appleid.apple.com), and verify your email.
 
-Download Xcode. It might take 30 minutes. View progress from the Launchpad app.
+Download [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12). It might take 30 minutes. View progress from the Launchpad app.
 
 ## Homebrew Package Manager
 
