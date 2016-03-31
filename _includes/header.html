@@ -1,3 +1,9 @@
+{% if page.url == '/' %}
+  {% assign path_prefix = '' %}
+{% else %}
+  {% assign path_prefix = '/' %}
+{% endif %}
+
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -9,7 +15,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="{% if page.url == '/' %}{{ '#home' }}{% else %}{{ '/' }}{% endif %}">
+            <a class="navbar-brand page-scroll" href="{{ path_prefix }}#{{ 'home' }}">
               {{ site.title }}
             </a>
         </div>
@@ -18,19 +24,25 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
             	<li>
-                  <a class="page-scroll" href="{% if page.url == '/' %}{{ '#about' }}{% else %}{{ '/#about' }}{% endif %}">About</a>
+                  <a class="page-scroll" href="{{ path_prefix }}#{{ 'about' }}">About</a>
                 </li>
-                <li>
-                  <a class="page-scroll" href="{% if page.url == '/' %}{{ '#services' }}{% else %}{{ '/#services' }}{% endif %}">Services</a>
+
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                  {% for post in site.categories["services"] reversed %}
+
+                    <li><a class="page-scroll" href="{{ path_prefix }}#{{ post.identifier }}">{{ post.title }}</a></li>
+                  {% endfor %}
+                  </ul>
                 </li>
+
                 <li>
-                  <a class="page-scroll" href="{% if page.url == '/' %}{{ '#contact' }}{% else %}{{ '/#contact' }}{% endif %}">Contact</a>
+                  <a class="page-scroll" href="{{ path_prefix }}#{{ 'contact' }}">Contact</a>
                 </li>
+
                 <li>
-                  <a href="/blog">
-                    Blog
-                    <!--span>&nbsp;<i class="fa fa-external-link"></i></span-->
-                  </a>
+                  <a href="/blog">Blog</a>
                 </li>
             </ul>
         </div>
