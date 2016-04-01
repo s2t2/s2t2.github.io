@@ -19,7 +19,8 @@
             <hr class="intro-divider">
             <h3>
             {% if page.author %}
-              Posted by {{ page.author }} on {{ page.date | date: "%Y-%m-%d" }}
+              Posted by {{ page.author }}
+              <span class="text-nowrap">on {{ page.date | date: "%Y-%m-%d" }}</span>
             {% else %}
               {{ page.date | date: "%Y-%m-%d" }}
             {% endif %}
