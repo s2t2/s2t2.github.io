@@ -2,7 +2,9 @@
 layout: post
 title:  "GTFS Data Client"
 author: MJ Rossetti
-categories: posts
+categories:
+ - posts
+ - open-source-applications
 img: gtfs-data-client-map.png
 use_img_as_post_header: true
 tags: gtfs open-transit-data gtfs-data-exchange google-transit-data-feed

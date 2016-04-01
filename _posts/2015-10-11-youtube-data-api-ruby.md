@@ -2,7 +2,9 @@
 layout: post
 title:  "Youtube Data API - Ruby Library"
 author: MJ Rossetti
-categories: posts
+categories:
+ - posts
+ - open-source-libraries
 img: rubygems_logo_red.png
 tags: youtube google api
 published: true

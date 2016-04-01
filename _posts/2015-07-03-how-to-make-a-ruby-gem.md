@@ -2,7 +2,9 @@
 layout: post
 title:  "How to create and manage a Ruby gem"
 author: MJ Rossetti
-categories: posts
+categories:
+ - posts
+ - process-documentation
 img: rubygems_logo_red.png
 tags: none
 published: true
