@@ -8,7 +8,12 @@ use_img_as_post_header: true
 tags: us-census housing income affordability map data-visualization
 published: true
 icon_class: dollar
-technologies: html css javascript mapbox.js d3.js
+technologies:
+ - html
+ - css
+ - javascript
+ - mapbox.js
+ - d3.js
 ---
 
 <!--

@@ -8,7 +8,11 @@ use_img_as_post_header: true
 tags: gsa hackathon environment greenhouse gas emissions data-visualization
 published: true
 icon_class: tree
-technologies: html css javascript d3.js
+technologies:
+ - html
+ - css
+ - javascript
+ - d3.js
 ---
 
 <!--

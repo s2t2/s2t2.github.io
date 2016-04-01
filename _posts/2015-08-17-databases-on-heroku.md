@@ -7,7 +7,11 @@ img: heroku-logo.png
 tags: none
 published: true
 icon_class: none
-technologies: heroku mysql postgresql ssh sequel-pro
+technologies:
+ - heroku
+ - mysql
+ - postgresql
+ - ssh
 credits :
   - http://stackoverflow.com/questions/9822313/remote-connect-to-cleardb-heroku-database
   - https://getsatisfaction.com/cleardb/topics/unable_to_download_cert_error_207

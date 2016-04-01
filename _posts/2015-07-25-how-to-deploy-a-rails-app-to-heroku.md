@@ -7,7 +7,12 @@ img: heroku-logo.png
 tags: none
 published: true
 icon_class: none
-technologies: heroku
+technologies:
+ - ruby
+ - rails
+ - rake
+ - bundler
+ - heroku
 credits:
  - https://github.com/heroku/heroku
  - https://devcenter.heroku.com/categories/command-line

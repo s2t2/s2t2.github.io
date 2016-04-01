@@ -7,7 +7,13 @@ img: rubygems_logo_red.png
 tags: youtube google api
 published: true
 icon_class: book
-technologies: ruby rspec json rubygems bundler google-apis
+technologies:
+ - ruby
+ - rspec
+ - json
+ - rubygems
+ - bundler
+ - google-apis
 ---
 
 A ruby interface to the [YouTube Data API](https://developers.google.com/youtube/v3/docs/).

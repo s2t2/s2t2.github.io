@@ -7,7 +7,12 @@ img: rubygems_logo_red.png
 tags: gtfs open-transit-data gtfs-data-exchange
 published: true
 icon_class: book
-technologies: ruby rspec json rubygems bundler
+technologies:
+ - ruby
+ - rspec
+ - json
+ - rubygems
+ - bundler
 ---
 
 A ruby wrapper for the [GTFS Data Exchange API](http://www.gtfs-data-exchange.com/api).

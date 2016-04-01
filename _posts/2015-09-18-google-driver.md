@@ -7,7 +7,13 @@ img: rubygems_logo_red.png
 tags: none
 published: true
 icon_class: none
-technologies: google-drive csv ruby rubygems bundler rake
+technologies:
+ - google-drive
+ - csv
+ - ruby
+ - rubygems
+ - bundler
+ - rake
 ---
 
 A ruby library

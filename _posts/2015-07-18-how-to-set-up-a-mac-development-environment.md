@@ -8,7 +8,20 @@ use_img_as_post_header: true
 tags: none
 published: true
 icon_class: none
-technologies: mac os-x chrome atom homebrew ruby bundler python lunchy postgresql mysql
+technologies:
+ - mac os-x
+ - chrome
+ - atom
+ - homebrew
+ - ruby
+ - bundler
+ - python
+ - pip
+ - node.js
+ - lunchy
+ - postgresql
+ - mysql
+ - mongodb
 credits:
   - http://octopress.org/docs/setup/rbenv/
   - https://help.github.com/articles/associating-text-editors-with-git/#using-atom-as-your-editor

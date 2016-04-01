@@ -7,7 +7,9 @@ img: python-logo.png
 tags: python pip
 published: true
 icon_class: snake
-technologies: python pip
+technologies:
+ - python
+ - pip
 credits:  
  - http://stackoverflow.com/questions/8726207/what-are-the-python-equivalents-to-rubys-bundler-perls-carton
  - http://pip.readthedocs.org/en/stable/user_guide/#installing-packages

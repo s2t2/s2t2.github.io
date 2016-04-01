@@ -7,7 +7,14 @@ img: amazon-web-services-logo.png
 tags: none
 published: false
 icon_class: none
-technologies: ruby chef knife-solo rake rails mysql passenger
+technologies:
+ - ruby
+ - chef
+ - knife-solo
+ - rake
+ - rails
+ - mysql
+ - passenger
 ---
 
 This document describes the process of deploying an existing Ruby on Rails application to a production server, in this case an AWS EC2 instance.

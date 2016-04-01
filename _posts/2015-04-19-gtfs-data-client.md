@@ -8,7 +8,10 @@ use_img_as_post_header: true
 tags: gtfs open-transit-data gtfs-data-exchange google-transit-data-feed
 published: true
 icon_class: train
-technologies: ruby rails relational-database
+technologies:
+ - ruby
+ - rails
+ - relational-database
 ---
 
 <!--
