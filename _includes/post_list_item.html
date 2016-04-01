@@ -12,6 +12,15 @@
   </span>
 </p>
 
+{% if post.author %}
+<p>
+  By:
+  <span style="font-weight:normal;">
+    {{ post.author }}
+  </span>
+</p>
+{% endif %}
+
 {% if post.technologies %}
 <div>
   <span style="padding-right:5px;">Technologies:</span>
