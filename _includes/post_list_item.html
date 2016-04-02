@@ -27,7 +27,10 @@
   <ul class="list-inline" style="display:inline;">
     {% assign sorted_technologies = post.technologies | sort %}
     {% for item in sorted_technologies %}
-      <li style="font-weight:normal; padding-left:0; padding-right:0;">{{item}}</li>
+      <li data-techTag="{{ item }}" style="font-weight:normal; padding-left:0; padding-right:0;">
+
+        <a href="{{home_path_prefix}}blog?tech={{item}}">{{item}}</a>
+      </li>
     {% endfor %}
   </ul>
 </div>

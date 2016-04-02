@@ -1,0 +1,12 @@
+<script type="text/javascript">
+
+  var selectedTech = location.search.split("?tech=")[1].trim()
+  console.log("SELECTED TECH:", selectedTech)
+
+  if (selectedTech != "") {
+    d3.select('span#selected-technology')
+        .append("h3")
+            .text("Topic: "+selectedTech)
+  };
+
+</script>
