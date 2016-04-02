@@ -35,6 +35,9 @@
  + https://github.com/mbostock/d3/wiki/Selections
  + https://groups.google.com/forum/#!topic/d3-js/qJYN2egS6b8
  + https://www.w3.org/TR/selectors/#negation
+ + http://stackoverflow.com/questions/2487747/selecting-element-by-data-attribute
+ + http://www.w3schools.com/jquery/jquery_ref_selectors.asp
+ + http://api.jquery.com/attribute-contains-word-selector/
 
 ## Other
 

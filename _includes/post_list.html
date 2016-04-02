@@ -1,9 +1,15 @@
 <section id="post-list">
 <!-- A List of Posts-->
 {% for post in site.categories["posts"] %}
+  {% if post.technologies %}
+    {% assign tech_list_str = post.technologies | sort | join(" ") %}
+  {% endif %}
+
   {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
     {% if thecycle == 'odd' %}
-    <div class="content-section-a post" data-techTag="ruby">
+
+
+    <div class="content-section-a post" data-technologies="{{ tech_list_str }}">
 
         <div class="container">
 
@@ -23,7 +29,7 @@
     <!-- /.content-section-a -->
     {% else %}
 
-    <div class="content-section-b post" data-techTag="python">
+    <div class="content-section-b post" data-technologies="{{ tech_list_str }}">>
 
         <div class="container">
 

@@ -1,48 +1,29 @@
 <script type="text/javascript">
 
-  var selectedTech = location.search.split("?tech=")[1].trim() // parse url params
-  console.log("SELECTED TECH:", selectedTech)
+  if (location.search != "") {
+      console.log("DETECTED SOME URL PARAMS")
 
-  if (selectedTech != "") {
+      var selectedTech = location.search.split("?tech=")[1].trim()
+      console.log("SELECTED TECH:", selectedTech)
 
-    // update page header to reflect selection
+      if (selectedTech != "") {
 
-    d3.select('span#selected-technology')
-        .append("h3")
-            .text("Technology: "+selectedTech)
+          d3.select('span#selected-technology')
+              .append("h3")
+                  .text("Technology: "+selectedTech);
 
-    // hide posts not matching the selection
+          //var rubyPosts = $( "div.post[data-technologies*='ruby']" ).length
+          //var nonrubyPosts = $( "div.post:not([data-technologies*='ruby'])" ).length
+          //$( "div.post:not([data-technologies*='ruby'])" ).each(function(i, el){
+          //    el.remove()
+          //});
 
-    var post = d3.selectAll("div.post")
-    console.log(post)
+          $( "div.post:not([data-technologies*='"+selectedTech+"'])" ).each(function(i, el){
+              el.remove()
+          });
 
-    //var selectedPosts = d3.selectAll("div.post[data-techTag=" + selectedTech + "]")
-    //console.log(selectedPosts)
+      }; // if there is a selected technology in the url params
 
-    //var unselectedPosts = post.filter(function(p){
-    //  return p.node().dataset.techtag != selectedTech
-    //})
-    //console.log(unselectedPosts)
-
-    //var unselectedPost = post[0].filter(function(p){
-    //  return Array.from(p.classList).includes("content-section-a")
-    //})
-    //console.log(unselectedPost)
-
-
-    //var unselectedPost = post.filter(function(p){
-    //  return Array.from(p.classList).includes("content-section-a")
-    //})
-    //console.log(unselectedPost)
-
-    //unselectedPost.remove()
-
-
-    //var u = d3.select("svg").selectAll("*:not(.b_class)");
-    var u = d3.selectAll("div.post:not(.content-section-a)");
-    console.log(u)
-    u.remove()
-
-  };
+  }; // if url params are present
 
 </script>
