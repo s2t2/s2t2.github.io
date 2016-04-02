@@ -3,7 +3,7 @@
 {% for post in site.categories["posts"] %}
   {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
     {% if thecycle == 'odd' %}
-    <div class="content-section-a">
+    <div class="content-section-a post" data-techTag="ruby">
 
         <div class="container">
 
@@ -23,7 +23,7 @@
     <!-- /.content-section-a -->
     {% else %}
 
-    <div class="content-section-b">
+    <div class="content-section-b post" data-techTag="python">
 
         <div class="container">
 

@@ -1,12 +1,48 @@
 <script type="text/javascript">
 
-  var selectedTech = location.search.split("?tech=")[1].trim()
+  var selectedTech = location.search.split("?tech=")[1].trim() // parse url params
   console.log("SELECTED TECH:", selectedTech)
 
   if (selectedTech != "") {
+
+    // update page header to reflect selection
+
     d3.select('span#selected-technology')
         .append("h3")
-            .text("Topic: "+selectedTech)
+            .text("Technology: "+selectedTech)
+
+    // hide posts not matching the selection
+
+    var post = d3.selectAll("div.post")
+    console.log(post)
+
+    //var selectedPosts = d3.selectAll("div.post[data-techTag=" + selectedTech + "]")
+    //console.log(selectedPosts)
+
+    //var unselectedPosts = post.filter(function(p){
+    //  return p.node().dataset.techtag != selectedTech
+    //})
+    //console.log(unselectedPosts)
+
+    //var unselectedPost = post[0].filter(function(p){
+    //  return Array.from(p.classList).includes("content-section-a")
+    //})
+    //console.log(unselectedPost)
+
+
+    //var unselectedPost = post.filter(function(p){
+    //  return Array.from(p.classList).includes("content-section-a")
+    //})
+    //console.log(unselectedPost)
+
+    //unselectedPost.remove()
+
+
+    //var u = d3.select("svg").selectAll("*:not(.b_class)");
+    var u = d3.selectAll("div.post:not(.content-section-a)");
+    console.log(u)
+    u.remove()
+
   };
 
 </script>

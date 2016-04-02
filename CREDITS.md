@@ -28,6 +28,14 @@
  + https://commons.wikimedia.org/wiki/File:Python_logo_and_wordmark.svg
  + http://www.newcreationschapel.org/new/wp-content/uploads/2012/10/flipping-through-bible-pages.jpg
 
+## Posts API
+
+ + https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_data_attributes
+ + https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
+ + https://github.com/mbostock/d3/wiki/Selections
+ + https://groups.google.com/forum/#!topic/d3-js/qJYN2egS6b8
+ + https://www.w3.org/TR/selectors/#negation
+
 ## Other
 
  + http://www.lipsum.com/feed/html
