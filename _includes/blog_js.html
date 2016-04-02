@@ -12,13 +12,21 @@
               .append("h3")
                   .text("Technology: "+selectedTech);
 
-          //var rubyPosts = $( "div.post[data-technologies*='ruby']" ).length
-          //var nonrubyPosts = $( "div.post:not([data-technologies*='ruby'])" ).length
-          //$( "div.post:not([data-technologies*='ruby'])" ).each(function(i, el){
-          //    el.remove()
-          //});
+          var $selectedPosts = $( "div.post[data-technologies*='"+selectedTech+"']" );
+          var $unselectedPosts = $( "div.post:not([data-technologies*='"+selectedTech+"'])" );
+          console.log("SELECTED:", $selectedPosts.length, "UNSELECTED:", $unselectedPosts.length)
 
-          $( "div.post:not([data-technologies*='"+selectedTech+"'])" ).each(function(i, el){
+          if ( $selectedPosts.length == 0 ) {
+              console.log("OOPS, NO MATCHING POSTS")
+
+              d3.select("section#post-list")
+                  .append("p")
+                      .text("Sorry, there aren't any posts matching the selected technology '" + selectedTech + "'. Why don't you try 'ruby' instead?")
+                      .classed("text-center",1)
+                      .style("margin-bottom", "2em")
+          };
+
+          $unselectedPosts.each(function(i, el){
               el.remove()
           });
 

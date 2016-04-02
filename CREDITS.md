@@ -38,6 +38,7 @@
  + http://stackoverflow.com/questions/2487747/selecting-element-by-data-attribute
  + http://www.w3schools.com/jquery/jquery_ref_selectors.asp
  + http://api.jquery.com/attribute-contains-word-selector/
+ + http://stackoverflow.com/questions/24053838/store-jquery-selector-in-variable
 
 ## Other
 
