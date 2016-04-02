@@ -3,6 +3,8 @@
 {% for post in site.categories["posts"] %}
   {% if post.technologies %}
     {% assign tech_list_str = post.technologies | sort | join(" ") %}
+  {% else %}
+    {% assign tech_list_str = "" %}
   {% endif %}
 
   {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
