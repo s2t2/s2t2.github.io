@@ -39,6 +39,9 @@
  + http://www.w3schools.com/jquery/jquery_ref_selectors.asp
  + http://api.jquery.com/attribute-contains-word-selector/
  + http://stackoverflow.com/questions/24053838/store-jquery-selector-in-variable
+ + http://stackoverflow.com/questions/1485647/removing-multiple-classes-jquery
+ + https://api.jquery.com/removeclass/
+ + http://stackoverflow.com/questions/7092320/jquery-how-to-remove-class-for-each-element
 
 ## Other
 

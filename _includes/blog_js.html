@@ -7,9 +7,9 @@
 
         if (selectedTech != "") {
             // UPDATE TECH SELECTION
-            d3.select('span#selected-technology')
-                .append("h3")
-                    .text("Technology: "+selectedTech);
+            //d3.select('span#selected-technology')
+            //    .append("h3")
+            //        .text("Technology: "+selectedTech);
 
             // FIND SELECTED POSTS
             var $selectedPosts = $( "div.post[data-technologies*='"+selectedTech+"']" );
@@ -33,6 +33,21 @@
             // KEEP SELECTED POSTS ONLY
             $unselectedPosts.each(function(i, el){
                 el.remove();
+            });
+
+            // RE-STYLE REMAINING POSTS
+
+            $selectedPosts.each(function(i, el){
+                console.log(el.classList);
+                $(this).removeClass("content-section-a content-section-b")
+
+                if (i % 2) {
+                    console.log("B",i)
+                    $(this).addClass("content-section-b")
+                } else {
+                    console.log("A",i)
+                    $(this).addClass("content-section-a") // the first post (should be assigned a
+                };
             });
 
         }; // if there is a selected technology in the url params
