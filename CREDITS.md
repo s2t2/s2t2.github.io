@@ -42,6 +42,7 @@
  + http://stackoverflow.com/questions/1485647/removing-multiple-classes-jquery
  + https://api.jquery.com/removeclass/
  + http://stackoverflow.com/questions/7092320/jquery-how-to-remove-class-for-each-element
+ + http://stackoverflow.com/questions/3458779/how-can-i-do-sub-selects-on-already-selected-element
 
 ## Other
 
