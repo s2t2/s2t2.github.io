@@ -1,37 +1,36 @@
 <script type="text/javascript">
 
-  if (location.search != "") {
-      console.log("DETECTED SOME URL PARAMS")
+    if (location.search != "") {
+        console.log("DETECTED SOME URL PARAMS");
+        var selectedTech = location.search.split("?tech=")[1].trim();
+        console.log("SELECTED TECH:", selectedTech);
 
-      var selectedTech = location.search.split("?tech=")[1].trim()
-      console.log("SELECTED TECH:", selectedTech)
+        if (selectedTech != "") {
+            d3.select('span#selected-technology')
+                .append("h3")
+                    .text("Technology: "+selectedTech);
 
-      if (selectedTech != "") {
+            var $selectedPosts = $( "div.post[data-technologies*='"+selectedTech+"']" );
+            var $unselectedPosts = $( "div.post:not([data-technologies*='"+selectedTech+"'])" );
+            console.log("SELECTED:", $selectedPosts.length, "UNSELECTED:", $unselectedPosts.length);
 
-          d3.select('span#selected-technology')
-              .append("h3")
-                  .text("Technology: "+selectedTech);
+            if ( $selectedPosts.length == 0 ) {
+                console.log("OOPS, NO MATCHING POSTS");
+                var a = "<a href='/blog/?tech=ruby'>'ruby'</a>";
 
-          var $selectedPosts = $( "div.post[data-technologies*='"+selectedTech+"']" );
-          var $unselectedPosts = $( "div.post:not([data-technologies*='"+selectedTech+"'])" );
-          console.log("SELECTED:", $selectedPosts.length, "UNSELECTED:", $unselectedPosts.length)
+                d3.select("section#post-list")
+                    .append("p")
+                        .html("Sorry, found no posts matching the selected technology, '" + selectedTech + "'. Why don't you try " + a + " instead?")
+                        .classed("text-center",1)
+                        .style("margin-bottom", "2em");
+            }; // if there are no posts matching the selected technology
 
-          if ( $selectedPosts.length == 0 ) {
-              console.log("OOPS, NO MATCHING POSTS")
+            $unselectedPosts.each(function(i, el){
+                el.remove();
+            });
 
-              d3.select("section#post-list")
-                  .append("p")
-                      .text("Sorry, there aren't any posts matching the selected technology '" + selectedTech + "'. Why don't you try 'ruby' instead?")
-                      .classed("text-center",1)
-                      .style("margin-bottom", "2em")
-          };
+        }; // if there is a selected technology in the url params
 
-          $unselectedPosts.each(function(i, el){
-              el.remove()
-          });
-
-      }; // if there is a selected technology in the url params
-
-  }; // if url params are present
+    }; // if url params are present
 
 </script>
