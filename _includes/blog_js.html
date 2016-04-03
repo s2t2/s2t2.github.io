@@ -6,25 +6,31 @@
         console.log("SELECTED TECH:", selectedTech);
 
         if (selectedTech != "") {
+            // UPDATE TECH SELECTION
             d3.select('span#selected-technology')
                 .append("h3")
                     .text("Technology: "+selectedTech);
 
+            // FIND SELECTED POSTS
             var $selectedPosts = $( "div.post[data-technologies*='"+selectedTech+"']" );
             var $unselectedPosts = $( "div.post:not([data-technologies*='"+selectedTech+"'])" );
             console.log("SELECTED:", $selectedPosts.length, "UNSELECTED:", $unselectedPosts.length);
 
+            // UPDATE RESPONSE MESSAGE
+            var responseMessage = d3.select("span#technology-response-message").append("p")
+                .classed("text-center",1)
+                .style("margin-bottom", "2em");
+
             if ( $selectedPosts.length == 0 ) {
                 console.log("OOPS, NO MATCHING POSTS");
                 var a = "<a href='/blog/?tech=ruby'>'ruby'</a>";
+                responseMessage.html("Sorry, found no posts matching the selected technology, '" + selectedTech + "'. Why don't you try " + a + " instead?");
+            } else {
+                responseMessage.html("Found " + $selectedPosts.length + " posts matching the selected technology, '" + selectedTech + "'.");
+                    //.html("Found " + $selectedPosts.length + " matching posts.")
+            };
 
-                d3.select("section#post-list")
-                    .append("p")
-                        .html("Sorry, found no posts matching the selected technology, '" + selectedTech + "'. Why don't you try " + a + " instead?")
-                        .classed("text-center",1)
-                        .style("margin-bottom", "2em");
-            }; // if there are no posts matching the selected technology
-
+            // KEEP SELECTED POSTS ONLY
             $unselectedPosts.each(function(i, el){
                 el.remove();
             });
